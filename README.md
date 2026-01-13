@@ -15,18 +15,4 @@ The project utilizes data from the following Mendeley repositories:
 - [Conceptual Design Exploration](https://data.mendeley.com/datasets/h4rf6wzjcr/1)
 - [Design Creativity Experiments](https://data.mendeley.com/datasets/24yp3xp58b/1)
 
-**Setup:** Download and place `.mat` or `.csv` files into `data/raw/`.
-
-## Engineering Excellence
-- **LOSO Validation**: Leave-One-Subject-Out cross-validation ensures no identity leakage and tests inter-subject reliability.
-- **Strict Normalization**: Per-channel Z-score parameters are computed strictly on training participants and applied to the held-out subject.
-- **Multi-Objective Loss**:
-  - Classification: Cross-Entropy.
-  - Regression: Masked MSE (ignoring Rest segments).
-
-## Quick Start
-
-### 1. Installation
-Using `pip` (standard):
-```bash
-pip install -e .
+## Setup:
