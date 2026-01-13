@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eeg_creative_decoding"
+version = "0.1.0"
+description = "Decoding creative cognitive states and workload from EEG using cross-task generalization."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Anastasiia", email = "aasharovaa@mail.com"},
+    {name = "Dilan", email = "dilannefe@gmail.com"},
+    {name = "Orwa", email = "orwa.yassen@gmail.com"}
+]
+license = {text = "MIT"}
+keywords = ["eeg", "deep-learning", "creativity", "neuroscience", "loso"]
+
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "mne>=1.4.0",           # for eeg
+    "scipy>=1.10.0",
+    "scikit-learn>=1.2.0",
+    "torch>=2.0.0",
+    "hydra-core>=1.3.2",    # for configuration management
+    "matplotlib>=3.7.0",
+    "scantree",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",                # code formatting
+    "ruff",                 # linter
+    "pytest",               # testing
+    "ipykernel",            # jupyter notebooks
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
