@@ -1,0 +1,21 @@
+{
+  "balanced_accuracy": 0.4690592975540775,
+  "accuracy": 0.6450499929587382,
+  "macro_f1": 0.46017804645912336,
+  "segment_balanced_accuracy": 0.4781746031746031,
+  "segment_accuracy": 0.42857142857142855,
+  "segment_macro_f1": 0.38882459903096606,
+  "report_balanced_accuracy": 0.4781746031746031,
+  "report_accuracy": 0.42857142857142855,
+  "report_macro_f1": 0.38882459903096606,
+  "n_train": 14202,
+  "n_test": 14202,
+  "n_test_segments": 224,
+  "n_test_subjects": 28,
+  "best_params": {
+    "clf__C": 1,
+    "clf__gamma": 0.0001
+  },
+  "train_time_sec": 853.267,
+  "saved_at_utc": "2026-03-16T17:31:36Z"
+}

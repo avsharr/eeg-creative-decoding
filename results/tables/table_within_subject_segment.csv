@@ -1,0 +1,9 @@
+Dataset,Model,Segment Balanced Accuracy,STD,Segment Accuracy,Segment Macro F1,n_folds,n_test_segments,n_test_subjects,Experiment
+Creativity,Logistic Regression,0.5595,0.4189,0.5089,0.513,140.0,224,28.0,creativity_within_logreg
+Creativity,Linear SVM,0.5397,0.4198,0.4866,0.4715,140.0,224,28.0,creativity_within_linear_svm
+Creativity,RBF SVM,0.4782,0.4037,0.4286,0.3888,140.0,224,28.0,creativity_within_rbf_svm
+Creativity,EEGNet,0.4663,0.2145,0.4688,0.4601,56.0,224,,creativity_within_eegnet
+Design,Logistic Regression,0.8539,0.2361,0.8492,0.868,135.0,378,27.0,design_within_logreg
+Design,Linear SVM,0.8169,0.2532,0.8069,0.8327,135.0,378,27.0,design_within_linear_svm
+Design,RBF SVM,0.7757,0.2941,0.7646,0.7945,135.0,378,27.0,design_within_rbf_svm
+Design,EEGNet,0.6564,0.2071,0.7328,0.6712,54.0,378,,design_within_eegnet

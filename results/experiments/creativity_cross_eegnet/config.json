@@ -1,0 +1,31 @@
+{
+  "dataset_name": "creativity",
+  "model_type": "eegnet",
+  "input_type": "raw_windows",
+  "evaluation_type": "cross_subject",
+  "cv_type": "LeaveOneGroupOut",
+  "group_variable": "subject_id",
+  "selection_metric": "segment_balanced_accuracy",
+  "batch_size": 64,
+  "max_epochs": 50,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "early_stopping_patience": 12,
+  "lr_scheduler_patience": 4,
+  "lr_scheduler_factor": 0.5,
+  "grad_clip_norm": 1.0,
+  "min_delta": 0.001,
+  "normalize_per_window": true,
+  "class_weighted_loss": true,
+  "weighted_sampler": false,
+  "eegnet_config": {
+    "n_classes": 3,
+    "chans": 63,
+    "samples": 1000,
+    "dropout_rate": 0.5,
+    "F1": 8,
+    "D": 2,
+    "F2": 16,
+    "kernel_length": 64
+  }
+}

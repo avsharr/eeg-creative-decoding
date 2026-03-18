@@ -1,0 +1,12 @@
+{
+  "balanced_accuracy": 0.5305380869903208,
+  "accuracy": 0.5812402440754931,
+  "macro_f1": 0.5165413727160258,
+  "segment_balanced_accuracy": 0.6563786008230453,
+  "segment_accuracy": 0.7328042328042328,
+  "segment_macro_f1": 0.6711619254722704,
+  "n_train": 35235,
+  "n_test": 35235,
+  "n_test_segments": 378,
+  "train_time_sec": 682.808
+}

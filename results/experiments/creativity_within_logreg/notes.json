@@ -1,0 +1,12 @@
+{
+  "evaluation_type": "within_subject",
+  "dataset_name": "creativity",
+  "model_type": "logreg",
+  "scoring": "balanced_accuracy",
+  "n_subjects_total": 28,
+  "train_time_sec": 130.261,
+  "final_model_status": "fitted_without_grid_search in 2.19 sec",
+  "report_metric_level": "segment",
+  "aggregation_method": "mean_probability_per_segment",
+  "saved_at_utc": "2026-03-16T17:56:55Z"
+}

@@ -1,0 +1,12 @@
+{
+  "evaluation_type": "within_subject",
+  "dataset_name": "design",
+  "model_type": "logreg",
+  "scoring": "balanced_accuracy",
+  "n_subjects_total": 27,
+  "train_time_sec": 525.752,
+  "final_model_status": "fitted_without_grid_search in 11.20 sec",
+  "report_metric_level": "segment",
+  "aggregation_method": "mean_probability_per_segment",
+  "saved_at_utc": "2026-03-13T18:23:59Z"
+}

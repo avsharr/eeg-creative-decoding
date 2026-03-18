@@ -1,0 +1,20 @@
+{
+  "evaluation_type": "cross_subject",
+  "dataset_name": "creativity",
+  "model_type": "eegnet",
+  "aggregation": "segment_mean_probability",
+  "selection_metric": "segment_balanced_accuracy_on_heldout_subject",
+  "early_stopping_metric": "segment_balanced_accuracy_on_heldout_subject",
+  "best_saved_model_source": "best completed fold: test_subject_creativity_02",
+  "train_time_sec": 2182.81,
+  "eegnet_config": {
+    "n_classes": 3,
+    "chans": 63,
+    "samples": 1000,
+    "dropout_rate": 0.5,
+    "F1": 8,
+    "D": 2,
+    "F2": 16,
+    "kernel_length": 64
+  }
+}

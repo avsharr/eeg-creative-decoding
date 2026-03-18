@@ -1,0 +1,21 @@
+{
+  "dataset_name": "design",
+  "model_type": "logreg",
+  "input_type": "bandpower",
+  "evaluation_type": "within_subject",
+  "cv_type": "StratifiedGroupKFold_or_GroupKFold_fallback",
+  "group_variable": "segment_id",
+  "selection_metric": "balanced_accuracy",
+  "inner_n_splits": 5,
+  "scoring": "balanced_accuracy",
+  "feature_dim": 252,
+  "n_samples_total": 35235,
+  "final_model_strategy": "most_frequent_fold_best_params_no_full_grid_search",
+  "chosen_params": {
+    "clf__C": 0.01
+  },
+  "probability_output": true,
+  "aggregation_method": "mean_probability_per_segment",
+  "report_metric_level": "segment",
+  "saved_at_utc": "2026-03-13T18:23:59Z"
+}

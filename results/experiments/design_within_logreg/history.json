@@ -1,0 +1,2436 @@
+{
+  "fold_rows": [
+    {
+      "subject_id": "design_01",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8522228674667699,
+      "window_accuracy": 0.8613445378151261,
+      "window_macro_f1": 0.8550439143396923,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 860,
+      "n_test_windows": 238,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 3.541
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.20202020202020202,
+      "window_accuracy": 0.20202020202020202,
+      "window_macro_f1": 0.11204481792717087,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 999,
+      "n_test_windows": 99,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 3.876
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8210616438356164,
+      "window_accuracy": 0.8,
+      "window_macro_f1": 0.5241852487135507,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 888,
+      "n_test_windows": 210,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 3.368
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7878338278931751,
+      "window_accuracy": 0.6635294117647059,
+      "window_macro_f1": 0.550720922359932,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 673,
+      "n_test_windows": 425,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 2.37
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8412698412698413,
+      "window_accuracy": 0.8412698412698413,
+      "window_macro_f1": 0.3045977011494253,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 972,
+      "n_test_windows": 126,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.686
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8506172839506173,
+      "window_accuracy": 0.847953216374269,
+      "window_macro_f1": 0.6017316017316018,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 876,
+      "n_test_windows": 171,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.306
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.809538784067086,
+      "window_accuracy": 0.8082595870206489,
+      "window_macro_f1": 0.5443069482967072,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 708,
+      "n_test_windows": 339,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.582
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8233306836248013,
+      "window_accuracy": 0.823943661971831,
+      "window_macro_f1": 0.5490098599718286,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 905,
+      "n_test_windows": 142,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.643
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.448,
+      "window_accuracy": 0.448,
+      "window_macro_f1": 0.20626151012891344,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 922,
+      "n_test_windows": 125,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.549
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8542754163559533,
+      "window_accuracy": 0.7666666666666667,
+      "window_macro_f1": 0.7689061992859462,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 777,
+      "n_test_windows": 270,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.819
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.606547619047619,
+      "window_accuracy": 0.6354166666666666,
+      "window_macro_f1": 0.6119261692988068,
+      "segment_balanced_accuracy": 0.8333333333333334,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.7777777777777777,
+      "n_train_windows": 561,
+      "n_test_windows": 192,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10
+      },
+      "fold_time_sec": 1.806
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.38333333333333336,
+      "window_accuracy": 0.38333333333333336,
+      "window_macro_f1": 0.18473895582329317,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 633,
+      "n_test_windows": 120,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.076
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8247422680412371,
+      "window_accuracy": 0.8247422680412371,
+      "window_macro_f1": 0.3013182674199623,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 656,
+      "n_test_windows": 97,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.309
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.5395,
+      "window_accuracy": 0.5485232067510548,
+      "window_macro_f1": 0.3639117378247813,
+      "segment_balanced_accuracy": 0.25,
+      "segment_accuracy": 0.25,
+      "segment_macro_f1": 0.13333333333333333,
+      "n_train_windows": 516,
+      "n_test_windows": 237,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.612
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8039345711759505,
+      "window_accuracy": 0.8878504672897196,
+      "window_macro_f1": 0.576963906581741,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 646,
+      "n_test_windows": 107,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.017
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.4788235294117647,
+      "window_accuracy": 0.16712328767123288,
+      "window_macro_f1": 0.11179443623056191,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 391,
+      "n_test_windows": 365,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 1.277
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.5,
+      "window_accuracy": 0.2028985507246377,
+      "window_macro_f1": 0.11428571428571428,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 549,
+      "n_test_windows": 207,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 0.972
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.5921052631578947,
+      "window_accuracy": 0.6810344827586207,
+      "window_macro_f1": 0.28697391146259427,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.48888888888888893,
+      "n_train_windows": 640,
+      "n_test_windows": 116,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.192
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.4375,
+      "window_accuracy": 0.7446808510638298,
+      "window_macro_f1": 0.2845528455284553,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 709,
+      "n_test_windows": 47,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 2.663
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.42857142857142855,
+      "window_accuracy": 0.42857142857142855,
+      "window_macro_f1": 0.19999999999999998,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 735,
+      "n_test_windows": 21,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.35
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.5522388059701493,
+      "window_accuracy": 0.5522388059701493,
+      "window_macro_f1": 0.2371794871794872,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 936,
+      "n_test_windows": 67,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 3.733
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7900552486187845,
+      "window_accuracy": 0.7900552486187845,
+      "window_macro_f1": 0.294238683127572,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 822,
+      "n_test_windows": 181,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.13
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.4935064935064935,
+      "window_accuracy": 0.4935064935064935,
+      "window_macro_f1": 0.22028985507246376,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 926,
+      "n_test_windows": 77,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.8
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8850252337221809,
+      "window_accuracy": 0.9633507853403142,
+      "window_macro_f1": 0.8764853033145715,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 812,
+      "n_test_windows": 191,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.1
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.907256675279931,
+      "window_accuracy": 0.7946611909650924,
+      "window_macro_f1": 0.6829327022139456,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 516,
+      "n_test_windows": 487,
+      "n_train_segments": 9,
+      "n_test_segments": 5,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.769
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.673469387755102,
+      "window_accuracy": 0.673469387755102,
+      "window_macro_f1": 0.2682926829268293,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 724,
+      "n_test_windows": 49,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.679
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.5236038493597029,
+      "window_accuracy": 0.3728813559322034,
+      "window_macro_f1": 0.37320758633984313,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.5,
+      "n_train_windows": 478,
+      "n_test_windows": 295,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 0.815
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.7667450980392156,
+      "window_accuracy": 0.7840909090909091,
+      "window_macro_f1": 0.5007936507936508,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 597,
+      "n_test_windows": 176,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.968
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.49868881118881114,
+      "window_accuracy": 0.4939759036144578,
+      "window_macro_f1": 0.3285319365633639,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 607,
+      "n_test_windows": 166,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.721
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.42528735632183906,
+      "window_accuracy": 0.42528735632183906,
+      "window_macro_f1": 0.19892473118279572,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 686,
+      "n_test_windows": 87,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 2.478
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.1925133689839572,
+      "window_accuracy": 0.1925133689839572,
+      "window_macro_f1": 0.10762331838565022,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 776,
+      "n_test_windows": 374,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 2.699
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.45773657289002556,
+      "window_accuracy": 0.4632768361581921,
+      "window_macro_f1": 0.2996671577454029,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 973,
+      "n_test_windows": 177,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.403
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8702290076335878,
+      "window_accuracy": 0.8702290076335878,
+      "window_macro_f1": 0.31020408163265306,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1019,
+      "n_test_windows": 131,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 3.865
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.6352116875372689,
+      "window_accuracy": 0.768,
+      "window_macro_f1": 0.4732482140142879,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1025,
+      "n_test_windows": 125,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 3.356
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.912639405204461,
+      "window_accuracy": 0.8629737609329446,
+      "window_macro_f1": 0.6347589952477937,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 807,
+      "n_test_windows": 343,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 3.038
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.6675824175824177,
+      "window_accuracy": 0.6617647058823529,
+      "window_macro_f1": 0.44615561429720724,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 466,
+      "n_test_windows": 136,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.637
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7461038961038962,
+      "window_accuracy": 0.744,
+      "window_macro_f1": 0.5059835955358344,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 477,
+      "n_test_windows": 125,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.622
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8237697791688402,
+      "window_accuracy": 0.8223684210526315,
+      "window_macro_f1": 0.5725130725130726,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 450,
+      "n_test_windows": 152,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.448
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.686026936026936,
+      "window_accuracy": 0.8446601941747572,
+      "window_macro_f1": 0.49945195469492143,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 499,
+      "n_test_windows": 103,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 1.696
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.6511627906976745,
+      "window_accuracy": 0.6511627906976745,
+      "window_macro_f1": 0.2629107981220657,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 516,
+      "n_test_windows": 86,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.627
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8539368450082736,
+      "window_accuracy": 0.8984771573604061,
+      "window_macro_f1": 0.5755870538479234,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1679,
+      "n_test_windows": 394,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10
+      },
+      "fold_time_sec": 7.855
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.9251592356687899,
+      "window_accuracy": 0.8797953964194374,
+      "window_macro_f1": 0.6397016637980494,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1682,
+      "n_test_windows": 391,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 5.893
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.3696808510638298,
+      "window_accuracy": 0.3696808510638298,
+      "window_macro_f1": 0.17993527508090615,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 1697,
+      "n_test_windows": 376,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.896
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.9156773331236732,
+      "window_accuracy": 0.8952618453865336,
+      "window_macro_f1": 0.6350118882856027,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1672,
+      "n_test_windows": 401,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.771
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7945700740134384,
+      "window_accuracy": 0.8317025440313112,
+      "window_macro_f1": 0.5386325703385789,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1562,
+      "n_test_windows": 511,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 5.761
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9452172760996291,
+      "window_accuracy": 0.9497206703910615,
+      "window_macro_f1": 0.6309915296462382,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 964,
+      "n_test_windows": 179,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.594
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7449664429530202,
+      "window_accuracy": 0.7449664429530202,
+      "window_macro_f1": 0.2846153846153846,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 845,
+      "n_test_windows": 298,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.962
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8880705847261726,
+      "window_accuracy": 0.9015151515151515,
+      "window_macro_f1": 0.8932198213747681,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 879,
+      "n_test_windows": 264,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10
+      },
+      "fold_time_sec": 2.851
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8642644969650006,
+      "window_accuracy": 0.8636363636363636,
+      "window_macro_f1": 0.6102703683542007,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 967,
+      "n_test_windows": 176,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.227
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7903346653346653,
+      "window_accuracy": 0.8982300884955752,
+      "window_macro_f1": 0.5466551226551227,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 917,
+      "n_test_windows": 226,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.071
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.904209113164337,
+      "window_accuracy": 0.8893129770992366,
+      "window_macro_f1": 0.6000044478108267,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1900,
+      "n_test_windows": 524,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.318
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7886828644501278,
+      "window_accuracy": 0.7630331753554502,
+      "window_macro_f1": 0.5088099859192449,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 2002,
+      "n_test_windows": 422,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.532
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9040610786224821,
+      "window_accuracy": 0.915129151291513,
+      "window_macro_f1": 0.6244008562520359,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 2153,
+      "n_test_windows": 271,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.469
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8741797072185765,
+      "window_accuracy": 0.8338461538461538,
+      "window_macro_f1": 0.6213112789164569,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1774,
+      "n_test_windows": 650,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.704
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8231746031746032,
+      "window_accuracy": 0.8348294434470377,
+      "window_macro_f1": 0.5514937202780149,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1867,
+      "n_test_windows": 557,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.373
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.6942424242424242,
+      "window_accuracy": 0.7243243243243244,
+      "window_macro_f1": 0.6810401244891726,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.8,
+      "segment_macro_f1": 0.6190476190476191,
+      "n_train_windows": 442,
+      "n_test_windows": 185,
+      "n_train_segments": 9,
+      "n_test_segments": 5,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.207
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6078296703296704,
+      "window_accuracy": 0.6287878787878788,
+      "window_macro_f1": 0.37741347905282335,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 495,
+      "n_test_windows": 132,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 1.522
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.775,
+      "window_accuracy": 0.7777777777777778,
+      "window_macro_f1": 0.5166666666666667,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 591,
+      "n_test_windows": 36,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.702
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7587044534412956,
+      "window_accuracy": 0.8571428571428571,
+      "window_macro_f1": 0.5191688615744806,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 543,
+      "n_test_windows": 84,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 1.522
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 1.0,
+      "window_accuracy": 1.0,
+      "window_macro_f1": 0.6666666666666666,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 437,
+      "n_test_windows": 190,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.339
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.3333333333333333,
+      "window_accuracy": 0.3333333333333333,
+      "window_macro_f1": 0.16666666666666666,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 568,
+      "n_test_windows": 144,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.213
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6321428571428571,
+      "window_accuracy": 0.6122448979591837,
+      "window_macro_f1": 0.39444444444444443,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 614,
+      "n_test_windows": 98,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.344
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.5680622009569378,
+      "window_accuracy": 0.5179856115107914,
+      "window_macro_f1": 0.3436519085028528,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.25,
+      "segment_macro_f1": 0.13333333333333333,
+      "n_train_windows": 573,
+      "n_test_windows": 139,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.144
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7969040659048632,
+      "window_accuracy": 0.7128205128205128,
+      "window_macro_f1": 0.5803191343275383,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.6,
+      "n_train_windows": 517,
+      "n_test_windows": 195,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 1.972
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8907706296885656,
+      "window_accuracy": 0.875,
+      "window_macro_f1": 0.6232193732193733,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 576,
+      "n_test_windows": 136,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.449
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8536289292103245,
+      "window_accuracy": 0.8531073446327684,
+      "window_macro_f1": 0.6068553025074764,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1682,
+      "n_test_windows": 177,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 6.447
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7381826892366656,
+      "window_accuracy": 0.828080229226361,
+      "window_macro_f1": 0.5085907539934172,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1510,
+      "n_test_windows": 349,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 4.692
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.892263039334604,
+      "window_accuracy": 0.9182879377431906,
+      "window_macro_f1": 0.5948140935482708,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1602,
+      "n_test_windows": 257,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 6.392
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7922222222222222,
+      "window_accuracy": 0.7069199457259159,
+      "window_macro_f1": 0.4634770023650676,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1122,
+      "n_test_windows": 737,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.759
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.5978738836755974,
+      "window_accuracy": 0.5693215339233039,
+      "window_macro_f1": 0.5986608479869935,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 1520,
+      "n_test_windows": 339,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 6.658
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9379147312541474,
+      "window_accuracy": 0.9329073482428115,
+      "window_macro_f1": 0.624481141523182,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1216,
+      "n_test_windows": 313,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.973
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8202932463717607,
+      "window_accuracy": 0.7850467289719626,
+      "window_macro_f1": 0.525225020800242,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1101,
+      "n_test_windows": 428,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.734
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8179205268445139,
+      "window_accuracy": 0.8774928774928775,
+      "window_macro_f1": 0.5359581732821169,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1178,
+      "n_test_windows": 351,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.883
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8208955223880596,
+      "window_accuracy": 0.8064516129032258,
+      "window_macro_f1": 0.5939393939393939,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1405,
+      "n_test_windows": 124,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 4.843
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7634591638177045,
+      "window_accuracy": 0.7124600638977636,
+      "window_macro_f1": 0.7235216282835331,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 1216,
+      "n_test_windows": 313,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.814
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8351117886178862,
+      "window_accuracy": 0.8525179856115108,
+      "window_macro_f1": 0.5007853917141175,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 875,
+      "n_test_windows": 278,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.595
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8997782705099778,
+      "window_accuracy": 0.896551724137931,
+      "window_macro_f1": 0.8947815431800551,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 834,
+      "n_test_windows": 319,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.085
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.81,
+      "window_accuracy": 0.7192118226600985,
+      "window_macro_f1": 0.5706202233980012,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 950,
+      "n_test_windows": 203,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.332
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.527027027027027,
+      "window_accuracy": 0.527027027027027,
+      "window_macro_f1": 0.23008849557522124,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1005,
+      "n_test_windows": 148,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.971
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7017434620174345,
+      "window_accuracy": 0.6829268292682927,
+      "window_macro_f1": 0.45787481804949054,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 948,
+      "n_test_windows": 205,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.511
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.7945141065830721,
+      "window_accuracy": 0.7237237237237237,
+      "window_macro_f1": 0.7725723762398694,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 1298,
+      "n_test_windows": 333,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.785
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.9004854368932038,
+      "window_accuracy": 0.8416988416988417,
+      "window_macro_f1": 0.5368587686646986,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1372,
+      "n_test_windows": 259,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 4.154
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9837662337662338,
+      "window_accuracy": 0.9719887955182073,
+      "window_macro_f1": 0.6611661166116612,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1274,
+      "n_test_windows": 357,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.742
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8209606986899564,
+      "window_accuracy": 0.8209606986899564,
+      "window_macro_f1": 0.3005595523581135,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1402,
+      "n_test_windows": 229,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 4.567
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7996688741721855,
+      "window_accuracy": 0.7748344370860927,
+      "window_macro_f1": 0.5269301371342188,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1178,
+      "n_test_windows": 453,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.716
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8189194348988164,
+      "window_accuracy": 0.8675496688741722,
+      "window_macro_f1": 0.5713510286055474,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 751,
+      "n_test_windows": 151,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 2.548
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8735294117647059,
+      "window_accuracy": 0.8716216216216216,
+      "window_macro_f1": 0.590811561277294,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 754,
+      "n_test_windows": 148,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.71
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9193369399361909,
+      "window_accuracy": 0.9137055837563451,
+      "window_macro_f1": 0.914219308956151,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 705,
+      "n_test_windows": 197,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 2.253
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.9534804367606915,
+      "window_accuracy": 0.9483568075117371,
+      "window_macro_f1": 0.6239108021058586,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 689,
+      "n_test_windows": 213,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 2.504
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7932774914089347,
+      "window_accuracy": 0.7927461139896373,
+      "window_macro_f1": 0.5415140415140415,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 709,
+      "n_test_windows": 193,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.457
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9507389162561576,
+      "window_accuracy": 0.9507389162561576,
+      "window_macro_f1": 0.3249158249158249,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1233,
+      "n_test_windows": 203,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 5.622
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7839760193850267,
+      "window_accuracy": 0.7878103837471784,
+      "window_macro_f1": 0.5288999201186808,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 993,
+      "n_test_windows": 443,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 4.167
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8883248730964467,
+      "window_accuracy": 0.8883248730964467,
+      "window_macro_f1": 0.31362007168458783,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1239,
+      "n_test_windows": 197,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 5.612
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.45528455284552843,
+      "window_accuracy": 0.47863247863247865,
+      "window_macro_f1": 0.2170542635658915,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 1202,
+      "n_test_windows": 234,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.175
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8272980501392758,
+      "window_accuracy": 0.8272980501392758,
+      "window_macro_f1": 0.3018292682926829,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1077,
+      "n_test_windows": 359,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 4.695
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9149722072798996,
+      "window_accuracy": 0.8612099644128114,
+      "window_macro_f1": 0.6136332539747694,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1501,
+      "n_test_windows": 562,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 5.271
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6796875,
+      "window_accuracy": 0.6796875,
+      "window_macro_f1": 0.26976744186046514,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1807,
+      "n_test_windows": 256,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.156
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8708133971291866,
+      "window_accuracy": 0.8009153318077803,
+      "window_macro_f1": 0.39267208672086723,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1626,
+      "n_test_windows": 437,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 6.273
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8980693717277487,
+      "window_accuracy": 0.8683001531393568,
+      "window_macro_f1": 0.5184064628544274,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1410,
+      "n_test_windows": 653,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 5.521
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.9081632653061225,
+      "window_accuracy": 0.8838709677419355,
+      "window_macro_f1": 0.6329588014981273,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1908,
+      "n_test_windows": 155,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.468
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.4889145941777521,
+      "window_accuracy": 0.5461538461538461,
+      "window_macro_f1": 0.5294626371816725,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 1313,
+      "n_test_windows": 260,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10
+      },
+      "fold_time_sec": 4.818
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.4104064039408867,
+      "window_accuracy": 0.41228070175438597,
+      "window_macro_f1": 0.35727134357271345,
+      "segment_balanced_accuracy": 0.25,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1459,
+      "n_test_windows": 114,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 6.392
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.7823343848580442,
+      "window_accuracy": 0.7823343848580442,
+      "window_macro_f1": 0.2926253687315634,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 939,
+      "n_test_windows": 634,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.977
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.5648854961832062,
+      "window_accuracy": 0.5648854961832062,
+      "window_macro_f1": 0.24065040650406502,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1442,
+      "n_test_windows": 131,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 6.397
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.5472655101440753,
+      "window_accuracy": 0.543778801843318,
+      "window_macro_f1": 0.33169740768705286,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 1139,
+      "n_test_windows": 434,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.991
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8691964285714285,
+      "window_accuracy": 0.9078947368421053,
+      "window_macro_f1": 0.6164335664335664,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1127,
+      "n_test_windows": 304,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.996
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.9121212121212121,
+      "window_accuracy": 0.9121212121212121,
+      "window_macro_f1": 0.318013734812467,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1101,
+      "n_test_windows": 330,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 4.262
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.933684241327463,
+      "window_accuracy": 0.9325842696629213,
+      "window_macro_f1": 0.9267369840010349,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 1164,
+      "n_test_windows": 267,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 4.226
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.757311217808817,
+      "window_accuracy": 0.7590361445783133,
+      "window_macro_f1": 0.508253018721613,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1265,
+      "n_test_windows": 166,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 4.78
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8609693492375057,
+      "window_accuracy": 0.8626373626373627,
+      "window_macro_f1": 0.5761800479113331,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1067,
+      "n_test_windows": 364,
+      "n_train_segments": 9,
+      "n_test_segments": 5,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 3.936
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.689499327162189,
+      "window_accuracy": 0.5736842105263158,
+      "window_macro_f1": 0.66989969680819,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 1512,
+      "n_test_windows": 570,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 6.074
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8146766169154229,
+      "window_accuracy": 0.6746724890829694,
+      "window_macro_f1": 0.5849917414401142,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1624,
+      "n_test_windows": 458,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 6.911
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.540084388185654,
+      "window_accuracy": 0.540084388185654,
+      "window_macro_f1": 0.23378995433789954,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1845,
+      "n_test_windows": 237,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 8.559
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.6857142857142857,
+      "window_accuracy": 0.5992366412213741,
+      "window_macro_f1": 0.40264169439929826,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1820,
+      "n_test_windows": 262,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.199
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.4486486486486487,
+      "window_accuracy": 0.4486486486486487,
+      "window_macro_f1": 0.2064676616915423,
+      "segment_balanced_accuracy": 0.3333333333333333,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 1527,
+      "n_test_windows": 555,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 6.446
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9352147852147852,
+      "window_accuracy": 0.9731903485254692,
+      "window_macro_f1": 0.634425889430557,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 591,
+      "n_test_windows": 373,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 2.079
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 1.0,
+      "window_accuracy": 1.0,
+      "window_macro_f1": 0.6666666666666666,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 886,
+      "n_test_windows": 78,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10
+      },
+      "fold_time_sec": 2.968
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9558270676691729,
+      "window_accuracy": 0.9529411764705882,
+      "window_macro_f1": 0.6317733990147784,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 879,
+      "n_test_windows": 85,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100
+      },
+      "fold_time_sec": 3.301
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.9644138326876166,
+      "window_accuracy": 0.9647577092511013,
+      "window_macro_f1": 0.9671545186687919,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 737,
+      "n_test_windows": 227,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 2.588
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.9496644295302014,
+      "window_accuracy": 0.9253731343283582,
+      "window_macro_f1": 0.6069820154210094,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 763,
+      "n_test_windows": 201,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 2.747
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.514030612244898,
+      "window_accuracy": 0.5487528344671202,
+      "window_macro_f1": 0.2950076696244691,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 1606,
+      "n_test_windows": 441,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10
+      },
+      "fold_time_sec": 7.211
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8644257703081233,
+      "window_accuracy": 0.8346456692913385,
+      "window_macro_f1": 0.6146769362430466,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1793,
+      "n_test_windows": 254,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 7.521
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.6229261398549835,
+      "window_accuracy": 0.6224,
+      "window_macro_f1": 0.41853268937255644,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1422,
+      "n_test_windows": 625,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 5.811
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8844111776447106,
+      "window_accuracy": 0.886435331230284,
+      "window_macro_f1": 0.6139641446500653,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1730,
+      "n_test_windows": 317,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 6.845
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7155392660156157,
+      "window_accuracy": 0.7195121951219512,
+      "window_macro_f1": 0.47794339508780403,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 1637,
+      "n_test_windows": 410,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 6.989
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8568665377176016,
+      "window_accuracy": 0.7541528239202658,
+      "window_macro_f1": 0.5942259270001807,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.6,
+      "n_train_windows": 1040,
+      "n_test_windows": 602,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 3.758
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7659883720930232,
+      "window_accuracy": 0.7526315789473684,
+      "window_macro_f1": 0.5520944741532977,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1452,
+      "n_test_windows": 190,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.901
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.5526806526806527,
+      "window_accuracy": 0.7509578544061303,
+      "window_macro_f1": 0.36480550649821125,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1381,
+      "n_test_windows": 261,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.921
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7302220137585991,
+      "window_accuracy": 0.7580071174377224,
+      "window_macro_f1": 0.4914681440443213,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1361,
+      "n_test_windows": 281,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.365
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8007010943912449,
+      "window_accuracy": 0.7954545454545454,
+      "window_macro_f1": 0.5299788318417002,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1334,
+      "n_test_windows": 308,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 5.664
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.7459740769835035,
+      "window_accuracy": 0.7412587412587412,
+      "window_macro_f1": 0.523864405539396,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 619,
+      "n_test_windows": 143,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.178
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6480952380952381,
+      "window_accuracy": 0.6482758620689655,
+      "window_macro_f1": 0.5134965473948525,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 617,
+      "n_test_windows": 145,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1
+      },
+      "fold_time_sec": 2.195
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.7662337662337663,
+      "window_accuracy": 0.7662337662337663,
+      "window_macro_f1": 0.28921568627450983,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 685,
+      "n_test_windows": 77,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1
+      },
+      "fold_time_sec": 2.93
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8074074074074074,
+      "window_accuracy": 0.8095238095238095,
+      "window_macro_f1": 0.556140350877193,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 636,
+      "n_test_windows": 126,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 2.588
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8282382246376812,
+      "window_accuracy": 0.8118081180811808,
+      "window_macro_f1": 0.5222595583195413,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.48888888888888893,
+      "n_train_windows": 491,
+      "n_test_windows": 271,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.01
+      },
+      "fold_time_sec": 1.874
+    }
+  ],
+  "n_successful_folds": 135,
+  "saved_at_utc": "2026-03-13T18:23:59Z"
+}

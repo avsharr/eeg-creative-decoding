@@ -1,0 +1,12 @@
+{
+  "evaluation_type": "within_subject",
+  "dataset_name": "creativity",
+  "model_type": "svm_linear",
+  "scoring": "balanced_accuracy",
+  "n_subjects_total": 28,
+  "train_time_sec": 103.021,
+  "final_model_status": "fitted_without_grid_search in 82.77 sec",
+  "report_metric_level": "segment",
+  "aggregation_method": "mean_probability_per_segment",
+  "saved_at_utc": "2026-03-16T17:34:43Z"
+}

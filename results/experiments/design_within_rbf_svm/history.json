@@ -1,0 +1,2571 @@
+{
+  "fold_rows": [
+    {
+      "subject_id": "design_01",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8635630403923087,
+      "window_accuracy": 0.8697478991596639,
+      "window_macro_f1": 0.8688297956301513,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 860,
+      "n_test_windows": 238,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 26.735
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.20202020202020202,
+      "window_accuracy": 0.20202020202020202,
+      "window_macro_f1": 0.11204481792717087,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 999,
+      "n_test_windows": 99,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 33.69
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.816138698630137,
+      "window_accuracy": 0.780952380952381,
+      "window_macro_f1": 0.5125849363575462,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 888,
+      "n_test_windows": 210,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 26.523
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8694362017804154,
+      "window_accuracy": 0.7929411764705883,
+      "window_macro_f1": 0.6110231916665078,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 673,
+      "n_test_windows": 425,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 16.138
+    },
+    {
+      "subject_id": "design_01",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8253968253968254,
+      "window_accuracy": 0.8253968253968254,
+      "window_macro_f1": 0.30144927536231886,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 972,
+      "n_test_windows": 126,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 30.865
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8598765432098765,
+      "window_accuracy": 0.8596491228070176,
+      "window_macro_f1": 0.5990696050186454,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 876,
+      "n_test_windows": 171,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 29.243
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8101153039832285,
+      "window_accuracy": 0.8112094395280236,
+      "window_macro_f1": 0.5425925925925926,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 708,
+      "n_test_windows": 339,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 18.327
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.7901430842607313,
+      "window_accuracy": 0.7887323943661971,
+      "window_macro_f1": 0.5258215962441314,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 905,
+      "n_test_windows": 142,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 29.576
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.336,
+      "window_accuracy": 0.336,
+      "window_macro_f1": 0.16766467065868262,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 922,
+      "n_test_windows": 125,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 29.174
+    },
+    {
+      "subject_id": "design_02",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8151565995525726,
+      "window_accuracy": 0.7296296296296296,
+      "window_macro_f1": 0.7402510657113753,
+      "segment_balanced_accuracy": 0.8333333333333334,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.7777777777777777,
+      "n_train_windows": 777,
+      "n_test_windows": 270,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 22.351
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8160714285714286,
+      "window_accuracy": 0.828125,
+      "window_macro_f1": 0.8145108172467954,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 561,
+      "n_test_windows": 192,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 12.656
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.43333333333333335,
+      "window_accuracy": 0.43333333333333335,
+      "window_macro_f1": 0.20155038759689922,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 633,
+      "n_test_windows": 120,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 14.707
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.4742268041237113,
+      "window_accuracy": 0.4742268041237113,
+      "window_macro_f1": 0.21445221445221443,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 656,
+      "n_test_windows": 97,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 16.714
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.5243571428571429,
+      "window_accuracy": 0.5443037974683544,
+      "window_macro_f1": 0.3175809352517986,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 516,
+      "n_test_windows": 237,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 10.104
+    },
+    {
+      "subject_id": "design_03",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.9098143236074271,
+      "window_accuracy": 0.9158878504672897,
+      "window_macro_f1": 0.6088888888888889,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 646,
+      "n_test_windows": 107,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 17.861
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.4732352941176471,
+      "window_accuracy": 0.08767123287671233,
+      "window_macro_f1": 0.059854092054649165,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 391,
+      "n_test_windows": 365,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 6.024
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.0,
+      "window_accuracy": 0.0,
+      "window_macro_f1": 0.0,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 549,
+      "n_test_windows": 207,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.01
+      },
+      "fold_time_sec": 10.275
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.6622807017543859,
+      "window_accuracy": 0.33620689655172414,
+      "window_macro_f1": 0.18023304551932265,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.25,
+      "segment_macro_f1": 0.13333333333333333,
+      "n_train_windows": 640,
+      "n_test_windows": 116,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 14.707
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.5464285714285714,
+      "window_accuracy": 0.8297872340425532,
+      "window_macro_f1": 0.37566137566137564,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 709,
+      "n_test_windows": 47,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 18.053
+    },
+    {
+      "subject_id": "design_04",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.5238095238095238,
+      "window_accuracy": 0.5238095238095238,
+      "window_macro_f1": 0.22916666666666666,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 735,
+      "n_test_windows": 21,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 18.44
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.5373134328358209,
+      "window_accuracy": 0.5373134328358209,
+      "window_macro_f1": 0.23300970873786409,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 936,
+      "n_test_windows": 67,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 28.801
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8397790055248618,
+      "window_accuracy": 0.8397790055248618,
+      "window_macro_f1": 0.3043043043043043,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 822,
+      "n_test_windows": 181,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 23.267
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.35064935064935066,
+      "window_accuracy": 0.35064935064935066,
+      "window_macro_f1": 0.1730769230769231,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 926,
+      "n_test_windows": 77,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 27.528
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.6465210556796558,
+      "window_accuracy": 0.9214659685863874,
+      "window_macro_f1": 0.6349671833542802,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 812,
+      "n_test_windows": 191,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 24.165
+    },
+    {
+      "subject_id": "design_05",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.6214147286821705,
+      "window_accuracy": 0.9219712525667351,
+      "window_macro_f1": 0.6132136859781695,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.8,
+      "segment_macro_f1": 0.6190476190476191,
+      "n_train_windows": 516,
+      "n_test_windows": 487,
+      "n_train_segments": 9,
+      "n_test_segments": 5,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.01
+      },
+      "fold_time_sec": 9.911
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.5510204081632653,
+      "window_accuracy": 0.5510204081632653,
+      "window_macro_f1": 0.23684210526315788,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 724,
+      "n_test_windows": 49,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 19.261
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.48677729787072826,
+      "window_accuracy": 0.33220338983050846,
+      "window_macro_f1": 0.34796893667861406,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.5,
+      "n_train_windows": 478,
+      "n_test_windows": 295,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 8.792
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.7209411764705882,
+      "window_accuracy": 0.7272727272727273,
+      "window_macro_f1": 0.4660484883608616,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 597,
+      "n_test_windows": 176,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 13.18
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.5021853146853147,
+      "window_accuracy": 0.5301204819277109,
+      "window_macro_f1": 0.2523041474654378,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 607,
+      "n_test_windows": 166,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 13.503
+    },
+    {
+      "subject_id": "design_06",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.5862068965517241,
+      "window_accuracy": 0.5862068965517241,
+      "window_macro_f1": 0.24637681159420288,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 686,
+      "n_test_windows": 87,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 18.811
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.14705882352941177,
+      "window_accuracy": 0.14705882352941177,
+      "window_macro_f1": 0.08547008547008546,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 776,
+      "n_test_windows": 374,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.01
+      },
+      "fold_time_sec": 19.397
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.4654092071611253,
+      "window_accuracy": 0.4689265536723164,
+      "window_macro_f1": 0.30849048480151553,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 973,
+      "n_test_windows": 177,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 31.152
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.5572519083969466,
+      "window_accuracy": 0.5572519083969466,
+      "window_macro_f1": 0.238562091503268,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1019,
+      "n_test_windows": 131,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 36.679
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.6073345259391771,
+      "window_accuracy": 0.72,
+      "window_macro_f1": 0.45266639107069034,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1025,
+      "n_test_windows": 125,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 36.336
+    },
+    {
+      "subject_id": "design_07",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.5,
+      "window_accuracy": 0.21574344023323616,
+      "window_macro_f1": 0.3333333333333333,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.25,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 807,
+      "n_test_windows": 343,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 23.392
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.6813186813186813,
+      "window_accuracy": 0.6470588235294118,
+      "window_macro_f1": 0.4449045318610536,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 466,
+      "n_test_windows": 136,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 9.37
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6779220779220779,
+      "window_accuracy": 0.672,
+      "window_macro_f1": 0.46672236145920354,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 477,
+      "n_test_windows": 125,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 9.487
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.6045905059989567,
+      "window_accuracy": 0.618421052631579,
+      "window_macro_f1": 0.4714026423536364,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 450,
+      "n_test_windows": 152,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 9.192
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.6675084175084175,
+      "window_accuracy": 0.8155339805825242,
+      "window_macro_f1": 0.5140612076095947,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 499,
+      "n_test_windows": 103,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 11.229
+    },
+    {
+      "subject_id": "design_08",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.32558139534883723,
+      "window_accuracy": 0.32558139534883723,
+      "window_macro_f1": 0.16374269005847952,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 516,
+      "n_test_windows": 86,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 10.901
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9440843905129619,
+      "window_accuracy": 0.9416243654822335,
+      "window_macro_f1": 0.6167428305415762,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1679,
+      "n_test_windows": 394,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 85.749
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.9375258499462321,
+      "window_accuracy": 0.9232736572890026,
+      "window_macro_f1": 0.644540274141383,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1682,
+      "n_test_windows": 391,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 92.699
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.2393617021276596,
+      "window_accuracy": 0.2393617021276596,
+      "window_macro_f1": 0.12875536480686695,
+      "segment_balanced_accuracy": 0.3333333333333333,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 1697,
+      "n_test_windows": 376,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 73.036
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.9249941033100086,
+      "window_accuracy": 0.9102244389027432,
+      "window_macro_f1": 0.6405794641088759,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1672,
+      "n_test_windows": 401,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 85.012
+    },
+    {
+      "subject_id": "design_09",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7620399740782429,
+      "window_accuracy": 0.8199608610567515,
+      "window_macro_f1": 0.5202337345194489,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 1562,
+      "n_test_windows": 511,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 73.134
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8586380498145204,
+      "window_accuracy": 0.888268156424581,
+      "window_macro_f1": 0.5843881856540084,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 964,
+      "n_test_windows": 179,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 29.222
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7651006711409396,
+      "window_accuracy": 0.7651006711409396,
+      "window_macro_f1": 0.2889733840304182,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 845,
+      "n_test_windows": 298,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 21.111
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8944366324715306,
+      "window_accuracy": 0.9128787878787878,
+      "window_macro_f1": 0.9034993828629316,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 879,
+      "n_test_windows": 264,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 26.207
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8020792974299367,
+      "window_accuracy": 0.8011363636363636,
+      "window_macro_f1": 0.5882769472856019,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 967,
+      "n_test_windows": 176,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 31.351
+    },
+    {
+      "subject_id": "design_10",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7817182817182817,
+      "window_accuracy": 0.8982300884955752,
+      "window_macro_f1": 0.5472315817143404,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 917,
+      "n_test_windows": 226,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 26.414
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.950817341862118,
+      "window_accuracy": 0.950381679389313,
+      "window_macro_f1": 0.6320929502276652,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1900,
+      "n_test_windows": 524,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 114.331
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7451817683595177,
+      "window_accuracy": 0.7132701421800948,
+      "window_macro_f1": 0.47086815561268996,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 2002,
+      "n_test_windows": 422,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 112.286
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8978882391163092,
+      "window_accuracy": 0.9114391143911439,
+      "window_macro_f1": 0.6212200847962438,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 2153,
+      "n_test_windows": 271,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 137.748
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.9207681305737843,
+      "window_accuracy": 0.9061538461538462,
+      "window_macro_f1": 0.638507271285536,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1774,
+      "n_test_windows": 650,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 95.278
+    },
+    {
+      "subject_id": "design_11",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8824430641821945,
+      "window_accuracy": 0.8671454219030521,
+      "window_macro_f1": 0.5760121672599756,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1867,
+      "n_test_windows": 557,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 106.695
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.7198484848484848,
+      "window_accuracy": 0.7297297297297297,
+      "window_macro_f1": 0.7054911181309688,
+      "segment_balanced_accuracy": 0.8888888888888888,
+      "segment_accuracy": 0.8,
+      "segment_macro_f1": 0.8222222222222223,
+      "n_train_windows": 442,
+      "n_test_windows": 185,
+      "n_train_segments": 9,
+      "n_test_segments": 5,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 7.094
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6037087912087912,
+      "window_accuracy": 0.7045454545454546,
+      "window_macro_f1": 0.3956408434020375,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 495,
+      "n_test_windows": 132,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 8.337
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.6625,
+      "window_accuracy": 0.6944444444444444,
+      "window_macro_f1": 0.4324164448388051,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 591,
+      "n_test_windows": 36,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 11.337
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.774089068825911,
+      "window_accuracy": 0.8809523809523809,
+      "window_macro_f1": 0.5379901960784313,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 543,
+      "n_test_windows": 84,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 9.511
+    },
+    {
+      "subject_id": "design_12",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.9933333333333334,
+      "window_accuracy": 0.9947368421052631,
+      "window_macro_f1": 0.6629865287583409,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 437,
+      "n_test_windows": 190,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 7.695
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.3125,
+      "window_accuracy": 0.3125,
+      "window_macro_f1": 0.15873015873015872,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 568,
+      "n_test_windows": 144,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 13.842
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.5892857142857142,
+      "window_accuracy": 0.5816326530612245,
+      "window_macro_f1": 0.3714967860422406,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 614,
+      "n_test_windows": 98,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 15.19
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.5328947368421053,
+      "window_accuracy": 0.45323741007194246,
+      "window_macro_f1": 0.3019884009942005,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.25,
+      "segment_macro_f1": 0.13333333333333333,
+      "n_train_windows": 573,
+      "n_test_windows": 139,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 13.16
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7757773053414829,
+      "window_accuracy": 0.6820512820512821,
+      "window_macro_f1": 0.5723111965264431,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.6,
+      "n_train_windows": 517,
+      "n_test_windows": 195,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 12.014
+    },
+    {
+      "subject_id": "design_13",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8391679927256195,
+      "window_accuracy": 0.8161764705882353,
+      "window_macro_f1": 0.6021634082546438,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 576,
+      "n_test_windows": 136,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 15.01
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.5354587273191924,
+      "window_accuracy": 0.5423728813559322,
+      "window_macro_f1": 0.3682761102115941,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 1682,
+      "n_test_windows": 177,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 88.821
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7570664324496966,
+      "window_accuracy": 0.8424068767908309,
+      "window_macro_f1": 0.5237068802517036,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1510,
+      "n_test_windows": 349,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 69.384
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8531017154739213,
+      "window_accuracy": 0.914396887159533,
+      "window_macro_f1": 0.5807030347260232,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1602,
+      "n_test_windows": 257,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 78.181
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7915727321524423,
+      "window_accuracy": 0.723202170963365,
+      "window_macro_f1": 0.46460797544388877,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1122,
+      "n_test_windows": 737,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 36.36
+    },
+    {
+      "subject_id": "design_14",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.4333704842556381,
+      "window_accuracy": 0.41002949852507375,
+      "window_macro_f1": 0.46835885038947084,
+      "segment_balanced_accuracy": 0.3333333333333333,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1520,
+      "n_test_windows": 339,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 72.464
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9801136363636364,
+      "window_accuracy": 0.9776357827476039,
+      "window_macro_f1": 0.6515997042996888,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1216,
+      "n_test_windows": 313,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 47.127
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8612680789624356,
+      "window_accuracy": 0.8504672897196262,
+      "window_macro_f1": 0.5590749120160884,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1101,
+      "n_test_windows": 428,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 37.275
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.793726978457417,
+      "window_accuracy": 0.8689458689458689,
+      "window_macro_f1": 0.5219114219114219,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1178,
+      "n_test_windows": 351,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 49.143
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.6128567687876407,
+      "window_accuracy": 0.5887096774193549,
+      "window_macro_f1": 0.47021672649913576,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1405,
+      "n_test_windows": 124,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 60.523
+    },
+    {
+      "subject_id": "design_15",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7692507308897332,
+      "window_accuracy": 0.792332268370607,
+      "window_macro_f1": 0.7762779169690814,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 1216,
+      "n_test_windows": 313,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 42.842
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8038617886178862,
+      "window_accuracy": 0.8453237410071942,
+      "window_macro_f1": 0.47833313639765257,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 875,
+      "n_test_windows": 278,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 28.899
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.5696969696969697,
+      "window_accuracy": 0.43573667711598746,
+      "window_macro_f1": 0.4495857056890247,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.5,
+      "n_train_windows": 834,
+      "n_test_windows": 319,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 28.193
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.7416981132075472,
+      "window_accuracy": 0.645320197044335,
+      "window_macro_f1": 0.5543938262384864,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 950,
+      "n_test_windows": 203,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 32.409
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.668918918918919,
+      "window_accuracy": 0.668918918918919,
+      "window_macro_f1": 0.26720647773279355,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1005,
+      "n_test_windows": 148,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 36.226
+    },
+    {
+      "subject_id": "design_16",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7731423827314239,
+      "window_accuracy": 0.751219512195122,
+      "window_macro_f1": 0.4971833839918946,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 948,
+      "n_test_windows": 205,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 32.272
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8011145942180424,
+      "window_accuracy": 0.7297297297297297,
+      "window_macro_f1": 0.7864741641337386,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 1298,
+      "n_test_windows": 333,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 51.975
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8967301703608719,
+      "window_accuracy": 0.8803088803088803,
+      "window_macro_f1": 0.5599994685903695,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1372,
+      "n_test_windows": 259,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 59.451
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9144248608534322,
+      "window_accuracy": 0.9411764705882353,
+      "window_macro_f1": 0.6366080686778076,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1274,
+      "n_test_windows": 357,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 52.115
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7554585152838428,
+      "window_accuracy": 0.7554585152838428,
+      "window_macro_f1": 0.2868988391376451,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1402,
+      "n_test_windows": 229,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 61.886
+    },
+    {
+      "subject_id": "design_17",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8294701986754967,
+      "window_accuracy": 0.7991169977924945,
+      "window_macro_f1": 0.5279758570397622,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1178,
+      "n_test_windows": 453,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 43.652
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.6470981290568919,
+      "window_accuracy": 0.7417218543046358,
+      "window_macro_f1": 0.47161127685654153,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 751,
+      "n_test_windows": 151,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 21.723
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8665441176470587,
+      "window_accuracy": 0.8581081081081081,
+      "window_macro_f1": 0.5757730128591055,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 754,
+      "n_test_windows": 148,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 20.143
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9292550977944236,
+      "window_accuracy": 0.9238578680203046,
+      "window_macro_f1": 0.92509428058561,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 705,
+      "n_test_windows": 197,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 18.32
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.925443585077343,
+      "window_accuracy": 0.9154929577464789,
+      "window_macro_f1": 0.598412020223599,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 689,
+      "n_test_windows": 213,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 17.948
+    },
+    {
+      "subject_id": "design_18",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7319050687285223,
+      "window_accuracy": 0.7305699481865285,
+      "window_macro_f1": 0.4746709519436792,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 709,
+      "n_test_windows": 193,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 17.523
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9014778325123153,
+      "window_accuracy": 0.9014778325123153,
+      "window_macro_f1": 0.3160621761658031,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1233,
+      "n_test_windows": 203,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 57.284
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8066928475935828,
+      "window_accuracy": 0.8148984198645598,
+      "window_macro_f1": 0.5413584374325611,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 993,
+      "n_test_windows": 443,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 35.385
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8274111675126904,
+      "window_accuracy": 0.8274111675126904,
+      "window_macro_f1": 0.30185185185185187,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1239,
+      "n_test_windows": 197,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 57.59
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.45934959349593496,
+      "window_accuracy": 0.4829059829059829,
+      "window_macro_f1": 0.21772639691714835,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 1202,
+      "n_test_windows": 234,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 49.037
+    },
+    {
+      "subject_id": "design_19",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7994428969359332,
+      "window_accuracy": 0.7994428969359332,
+      "window_macro_f1": 0.2961816305469556,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1077,
+      "n_test_windows": 359,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 43.815
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.9374394835933297,
+      "window_accuracy": 0.9163701067615658,
+      "window_macro_f1": 0.6450139509995031,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1501,
+      "n_test_windows": 562,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 80.663
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.25390625,
+      "window_accuracy": 0.25390625,
+      "window_macro_f1": 0.13499480789200416,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 1807,
+      "n_test_windows": 256,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 99.127
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8373205741626795,
+      "window_accuracy": 0.8810068649885584,
+      "window_macro_f1": 0.4333990309600066,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1626,
+      "n_test_windows": 437,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 88.774
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8517015706806282,
+      "window_accuracy": 0.8529862174578867,
+      "window_macro_f1": 0.49894047389712964,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1410,
+      "n_test_windows": 653,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 67.601
+    },
+    {
+      "subject_id": "design_20",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8112244897959184,
+      "window_accuracy": 0.7612903225806451,
+      "window_macro_f1": 0.589098532494759,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1908,
+      "n_test_windows": 155,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 118.629
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.5778870252554463,
+      "window_accuracy": 0.6230769230769231,
+      "window_macro_f1": 0.5960066222958033,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 1313,
+      "n_test_windows": 260,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 68.749
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6209975369458128,
+      "window_accuracy": 0.6228070175438597,
+      "window_macro_f1": 0.5074509803921569,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1459,
+      "n_test_windows": 114,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 85.434
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.8548895899053628,
+      "window_accuracy": 0.8548895899053628,
+      "window_macro_f1": 0.3072562358276644,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 939,
+      "n_test_windows": 634,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 37.927
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.0,
+      "window_accuracy": 0.0,
+      "window_macro_f1": 0.0,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 1442,
+      "n_test_windows": 131,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 83.362
+    },
+    {
+      "subject_id": "design_21",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.4930167597765363,
+      "window_accuracy": 0.8133640552995391,
+      "window_macro_f1": 0.2990258365099534,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.26666666666666666,
+      "n_train_windows": 1139,
+      "n_test_windows": 434,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 49.266
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8638392857142857,
+      "window_accuracy": 0.9177631578947368,
+      "window_macro_f1": 0.6108813235762011,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1127,
+      "n_test_windows": 304,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 46.494
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.9575757575757575,
+      "window_accuracy": 0.9575757575757575,
+      "window_macro_f1": 0.326109391124871,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1101,
+      "n_test_windows": 330,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 42.322
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9042689679388488,
+      "window_accuracy": 0.9250936329588015,
+      "window_macro_f1": 0.9177426133112432,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 1164,
+      "n_test_windows": 267,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 48.676
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7768077986323294,
+      "window_accuracy": 0.7831325301204819,
+      "window_macro_f1": 0.5178544748244435,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1265,
+      "n_test_windows": 166,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 54.212
+    },
+    {
+      "subject_id": "design_22",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8249282802355429,
+      "window_accuracy": 0.8269230769230769,
+      "window_macro_f1": 0.5491525423728814,
+      "segment_balanced_accuracy": 0.875,
+      "segment_accuracy": 0.8,
+      "segment_macro_f1": 0.5079365079365079,
+      "n_train_windows": 1067,
+      "n_test_windows": 364,
+      "n_train_segments": 9,
+      "n_test_segments": 5,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 40.05
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.6870144043199239,
+      "window_accuracy": 0.5719298245614035,
+      "window_macro_f1": 0.6692939244663383,
+      "segment_balanced_accuracy": 0.6666666666666666,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 1512,
+      "n_test_windows": 570,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 80.268
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.6854566453447051,
+      "window_accuracy": 0.5152838427947598,
+      "window_macro_f1": 0.5275075762392184,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 1624,
+      "n_test_windows": 458,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 101.211
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.33755274261603374,
+      "window_accuracy": 0.33755274261603374,
+      "window_macro_f1": 0.1682439537329127,
+      "segment_balanced_accuracy": 0.0,
+      "segment_accuracy": 0.0,
+      "segment_macro_f1": 0.0,
+      "n_train_windows": 1845,
+      "n_test_windows": 237,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 119.762
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7345238095238096,
+      "window_accuracy": 0.6641221374045801,
+      "window_macro_f1": 0.4342847927753588,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1820,
+      "n_test_windows": 262,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 115.625
+    },
+    {
+      "subject_id": "design_23",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.29009009009009007,
+      "window_accuracy": 0.29009009009009007,
+      "window_macro_f1": 0.14990689013035383,
+      "segment_balanced_accuracy": 0.3333333333333333,
+      "segment_accuracy": 0.3333333333333333,
+      "segment_macro_f1": 0.16666666666666666,
+      "n_train_windows": 1527,
+      "n_test_windows": 555,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 80.771
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8797452547452548,
+      "window_accuracy": 0.9517426273458445,
+      "window_macro_f1": 0.6062650689121595,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 591,
+      "n_test_windows": 373,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 11.657
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.949874686716792,
+      "window_accuracy": 0.9487179487179487,
+      "window_macro_f1": 0.6495275763568447,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 886,
+      "n_test_windows": 78,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 24.082
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.9295112781954887,
+      "window_accuracy": 0.9176470588235294,
+      "window_macro_f1": 0.6070085727177019,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 879,
+      "n_test_windows": 85,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 24.185
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.9763589631274341,
+      "window_accuracy": 0.9779735682819384,
+      "window_macro_f1": 0.9791161446231849,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 1.0,
+      "n_train_windows": 737,
+      "n_test_windows": 227,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 18.243
+    },
+    {
+      "subject_id": "design_24",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.964442436757873,
+      "window_accuracy": 0.9751243781094527,
+      "window_macro_f1": 0.6449113008842853,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 763,
+      "n_test_windows": 201,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 18.995
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.6517857142857142,
+      "window_accuracy": 0.6507936507936508,
+      "window_macro_f1": 0.3590836777059931,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1606,
+      "n_test_windows": 441,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 83.696
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.8141456582633053,
+      "window_accuracy": 0.7834645669291339,
+      "window_macro_f1": 0.595578231292517,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1793,
+      "n_test_windows": 254,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 108.052
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.6361271557904224,
+      "window_accuracy": 0.6368,
+      "window_macro_f1": 0.42444599471186556,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.48888888888888893,
+      "n_train_windows": 1422,
+      "n_test_windows": 625,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 60.036
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.37666666666666665,
+      "window_accuracy": 0.35646687697160884,
+      "window_macro_f1": 0.2864385297845374,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 1730,
+      "n_test_windows": 317,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 0.1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 101.608
+    },
+    {
+      "subject_id": "design_25",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7270600033428045,
+      "window_accuracy": 0.7317073170731707,
+      "window_macro_f1": 0.4851046698872786,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.4444444444444444,
+      "n_train_windows": 1637,
+      "n_test_windows": 410,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 85.687
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.8073842302878598,
+      "window_accuracy": 0.686046511627907,
+      "window_macro_f1": 0.5891053391053391,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.6,
+      "n_train_windows": 1040,
+      "n_test_windows": 602,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 42.275
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.7262969588550985,
+      "window_accuracy": 0.7157894736842105,
+      "window_macro_f1": 0.5408345053914675,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1452,
+      "n_test_windows": 190,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 80.489
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.5881118881118881,
+      "window_accuracy": 0.7739463601532567,
+      "window_macro_f1": 0.3960661758214595,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 1381,
+      "n_test_windows": 261,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 70.725
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.7021575984990619,
+      "window_accuracy": 0.7295373665480427,
+      "window_macro_f1": 0.4708837550421709,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1361,
+      "n_test_windows": 281,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 68.103
+    },
+    {
+      "subject_id": "design_26",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.8177154582763337,
+      "window_accuracy": 0.8084415584415584,
+      "window_macro_f1": 0.5398162057705463,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 1334,
+      "n_test_windows": 308,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": "scale"
+      },
+      "fold_time_sec": 65.236
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 1,
+      "window_balanced_accuracy": 0.5357423409269442,
+      "window_accuracy": 0.5384615384615384,
+      "window_macro_f1": 0.4231160425335183,
+      "segment_balanced_accuracy": 0.75,
+      "segment_accuracy": 0.6666666666666666,
+      "segment_macro_f1": 0.5555555555555555,
+      "n_train_windows": 619,
+      "n_test_windows": 143,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.001
+      },
+      "fold_time_sec": 16.297
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 2,
+      "window_balanced_accuracy": 0.44619047619047625,
+      "window_accuracy": 0.4482758620689655,
+      "window_macro_f1": 0.4002562758460015,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.3333333333333333,
+      "n_train_windows": 617,
+      "n_test_windows": 145,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 100,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 16.719
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 3,
+      "window_balanced_accuracy": 0.6493506493506493,
+      "window_accuracy": 0.6493506493506493,
+      "window_macro_f1": 0.26246719160104987,
+      "segment_balanced_accuracy": 0.5,
+      "segment_accuracy": 0.5,
+      "segment_macro_f1": 0.2222222222222222,
+      "n_train_windows": 685,
+      "n_test_windows": 77,
+      "n_train_segments": 12,
+      "n_test_segments": 2,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 21.446
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 4,
+      "window_balanced_accuracy": 0.8135802469135802,
+      "window_accuracy": 0.8174603174603174,
+      "window_macro_f1": 0.5519083067470164,
+      "segment_balanced_accuracy": 1.0,
+      "segment_accuracy": 1.0,
+      "segment_macro_f1": 0.6666666666666666,
+      "n_train_windows": 636,
+      "n_test_windows": 126,
+      "n_train_segments": 11,
+      "n_test_segments": 3,
+      "best_params": {
+        "clf__C": 10,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 17.561
+    },
+    {
+      "subject_id": "design_27",
+      "outer_fold": 5,
+      "window_balanced_accuracy": 0.7792119565217391,
+      "window_accuracy": 0.7121771217712177,
+      "window_macro_f1": 0.47981257663338583,
+      "segment_balanced_accuracy": 0.8333333333333333,
+      "segment_accuracy": 0.75,
+      "segment_macro_f1": 0.48888888888888893,
+      "n_train_windows": 491,
+      "n_test_windows": 271,
+      "n_train_segments": 10,
+      "n_test_segments": 4,
+      "best_params": {
+        "clf__C": 1,
+        "clf__gamma": 0.0001
+      },
+      "fold_time_sec": 11.112
+    }
+  ],
+  "n_successful_folds": 135,
+  "saved_at_utc": "2026-03-13T16:38:31Z"
+}

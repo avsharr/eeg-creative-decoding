@@ -1,0 +1,5 @@
+Train Dataset,Test Dataset,Task,Model,Segment Balanced Accuracy,STD,Segment Accuracy,Segment Macro F1,n_folds,n_test_segments,n_test_subjects,Experiment
+Creativity,Design,RST / IDG / IDE,EEGNet,0.4959,,0.5159,0.4903,,378,27.0,creativity_to_design_eegnet
+Creativity,Design,RST vs IDG,EEGNet,0.7191,,0.8009,0.7259,,216,27.0,creativity_to_design_rest_ig_eegnet
+Design,Creativity,RST / IDG / IDE,EEGNet,0.3333,,0.25,0.1333,,224,28.0,design_to_creativity_eegnet
+Design,Creativity,RST vs IDG,EEGNet,0.5,,0.4,0.2857,,140,28.0,design_to_creativity_rest_ig_eegnet

@@ -1,0 +1,29 @@
+{
+  "dataset_name": "design_to_creativity_rest_ig",
+  "train_dataset_name": "design",
+  "test_dataset_name": "creativity",
+  "task_type": "binary_rest_vs_ig",
+  "model_type": "eegnet",
+  "input_type": "raw_windows",
+  "evaluation_type": "cross_dataset",
+  "group_variable": "none",
+  "selection_metric": "segment_balanced_accuracy_on_target_dataset",
+  "batch_size": 64,
+  "max_epochs": 50,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip_norm": 1.0,
+  "normalize_per_window": true,
+  "class_weighted_loss": true,
+  "weighted_sampler": false,
+  "eegnet_config": {
+    "n_classes": 2,
+    "chans": 63,
+    "samples": 1000,
+    "dropout_rate": 0.5,
+    "F1": 8,
+    "D": 2,
+    "F2": 16,
+    "kernel_length": 64
+  }
+}

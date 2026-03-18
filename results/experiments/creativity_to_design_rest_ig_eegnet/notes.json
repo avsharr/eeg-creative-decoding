@@ -1,0 +1,11 @@
+{
+  "evaluation_type": "cross_dataset",
+  "task_type": "binary_rest_vs_ig",
+  "train_dataset_name": "creativity",
+  "test_dataset_name": "design",
+  "model_type": "eegnet",
+  "aggregation": "segment_mean_probability",
+  "selection_metric": "segment_balanced_accuracy_on_target_dataset",
+  "best_score": 0.7191358024691359,
+  "train_time_sec": 581.086
+}
