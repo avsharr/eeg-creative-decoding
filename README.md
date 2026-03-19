@@ -19,7 +19,7 @@ The project includes:
 - within-subject experiments
 - cross-subject experiments
 - cross-dataset transfer experiments
-- comparison between classical ML models and EEGNet
+- comparison between classical machine-learning models and EEGNet
 
 ## Public datasets
 
@@ -44,7 +44,8 @@ src/        reusable project code
 scripts/    command-line entry points
 data/       raw/processed data folders and setup instructions
 results/    saved experiment outputs, figures, and tables
-notebooks/  archived notebook reference
+notebooks/  original and non-Drive notebook versions
+cache/      local cache outputs (not tracked)
 Included outputs
 
 This repository already includes saved outputs generated during the project workflow:
@@ -55,7 +56,7 @@ results/figures/
 
 results/tables/
 
-These are included so the checker can inspect final outputs directly without rerunning training.
+These are included so the checker can inspect the final outputs directly without having to rerun all experiments.
 
 Supported experiments
 Within-subject
@@ -88,15 +89,11 @@ creativity_cross_eegnet
 
 Cross-dataset transfer
 
-Saved outputs are included for:
-
 design_to_creativity_eegnet
 
 creativity_to_design_eegnet
 
 Binary cross-dataset transfer
-
-Saved outputs are included for:
 
 design_to_creativity_rest_ig_eegnet
 
@@ -111,21 +108,40 @@ Data setup
 
 See data/README.md for detailed dataset setup instructions.
 
-Basic workflow:
-
+Official public-source workflow
 python -m scripts.download_data --show-instructions
 python -m scripts.download_data --check-only
+Optional Google Drive helper
 
-After placing the raw .mat files in the expected dataset folders, continue with the cache and experiment workflow.
+If the shared Google Drive dataset mirror is available, the datasets can also be downloaded automatically with:
 
-Basic usage
+python -m scripts.download_data_gdrive
+
+This helper is provided for convenience. The official public dataset sources remain the Mendeley dataset pages listed above.
+
+Main scripts
 Validate dataset placement
 python -m scripts.download_data --check-only
-Build caches
+Build classical bandpower caches
 python -m scripts.build_caches --dataset all
-Saved outputs
+Build memory-safe raw-window HDF5 caches for EEGNet
+python -m scripts.build_raw_windows_h5 --dataset all
+Run one experiment
+python -m scripts.run_experiment --experiment design_within_logreg --force
+Regenerate report artifacts
+python -m scripts.generate_report_artifacts
+Notebooks
 
-Saved experiment outputs are already available in results/experiments/.
+See notebooks/README.md.
+
+Two versions of the notebook are included:
+
+Final_ML_Project_drive.ipynb — the original Drive-based notebook used during development
+
+Final_ML_Project.ipynb — the same notebook adapted to run without Google Drive dependency
+
+The Drive-based notebook is kept for preserving the original development workflow.
+The non-Drive notebook is included so the checker can run the notebook without needing the original Google Drive setup.
 
 Reproducibility notes
 
@@ -135,17 +151,35 @@ Generated local caches are not intended to be tracked in git.
 
 Saved final experiment outputs are included in results/experiments/.
 
-Classical pipelines are easier to rerun on standard hardware.
+Classical experiments can be rerun through the repo scripts.
 
-EEGNet and raw-window pipelines are more resource-intensive and may require more RAM and/or GPU support.
+Report tables and figures can be regenerated from saved experiment outputs.
 
-The archived notebook is kept for reference, but the intended repo workflow is through modular code and scripts.
+EEGNet rerun infrastructure is included through memory-safe HDF5 raw-window caches, but deep-learning experiments remain substantially more resource-intensive and may require long runtimes and stronger hardware.
 
-Archived notebook
+The original notebook is kept for reference, but the intended repository workflow is through the modular code in src/, the scripts in scripts/, and the non-Drive notebook when needed.
 
-The original working notebook is kept as an archive/reference:
+Notes about reproducibility vs original results
 
-notebooks/Final_ML_Project_archived.ipynb
+The repository includes the original saved project outputs under results/.
+
+The non-Drive notebook and the refactored repo code were adapted from the original project workflow so the checker can run the project without needing Google Drive. Because of differences such as:
+
+package versions
+
+solver behavior
+
+runtime environment
+
+hardware/runtime differences for deep-learning experiments
+
+minor numerical differences may appear between rerun results and the originally saved outputs.
+
+For this reason:
+
+the saved outputs in results/ should be treated as the main final project outputs
+
+the rerun code and non-Drive notebook should be treated as the reproducible checker-facing execution path
 
 Main final outputs
 
