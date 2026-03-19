@@ -1,10 +1,37 @@
+# virtual env
 .venv/
-.vscode/
+venv/
+
+# python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
+
+# notebook checkpoints
 .ipynb_checkpoints/
+
+# build metadata
 *.egg-info/
-data/raw/
-data/processed/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# raw and processed local data
+data/raw/*
+data/processed/*
+
+# keep folder structure and docs
+!data/README.md
+!data/raw/README.md
+!data/processed/README.md
+
+# generated experiment artifacts
+results/experiments/*
+
+# keep folder placeholder if needed
+!results/experiments/.gitkeep
+
+# keep final figures/tables tracked
+# results/figures/*
+# results/tables/*
