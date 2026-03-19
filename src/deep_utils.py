@@ -128,6 +128,57 @@ def aggregate_segment_predictions(segment_ids, y_true, probs):
         "segment_confusion_matrix": compute_confusion_matrix_fixed(seg_true, seg_pred),
     }
 
+CLASS_LABELS_NAME_BINARY = ["REST", "IG"]
+
+
+def compute_metrics_dict_binary(y_true, y_pred):
+    return {
+        "balanced_accuracy": float(balanced_accuracy_score(y_true, y_pred)),
+        "accuracy": float(accuracy_score(y_true, y_pred)),
+        "macro_f1": float(f1_score(y_true, y_pred, average="macro")),
+    }
+
+
+def compute_confusion_matrix_binary(y_true, y_pred):
+    return confusion_matrix(y_true, y_pred, labels=[0, 1])
+
+
+def aggregate_segment_predictions_binary(segment_ids, y_true, probs):
+    segment_ids = np.asarray(segment_ids)
+    y_true = np.asarray(y_true)
+    probs = np.asarray(probs)
+
+    unique_segments = np.unique(segment_ids)
+
+    seg_true = []
+    seg_pred = []
+    seg_probs_all = []
+
+    for seg in unique_segments:
+        mask = segment_ids == seg
+        seg_probs = probs[mask].mean(axis=0)
+        seg_pred_label = int(np.argmax(seg_probs))
+
+        vals, counts = np.unique(y_true[mask], return_counts=True)
+        seg_true_label = int(vals[np.argmax(counts)])
+
+        seg_true.append(seg_true_label)
+        seg_pred.append(seg_pred_label)
+        seg_probs_all.append(seg_probs)
+
+    seg_true = np.asarray(seg_true)
+    seg_pred = np.asarray(seg_pred)
+    seg_probs_all = np.asarray(seg_probs_all)
+
+    return {
+        "segment_ids_unique": unique_segments,
+        "segment_y_true": seg_true,
+        "segment_y_pred": seg_pred,
+        "segment_probs": seg_probs_all,
+        "segment_metrics": compute_metrics_dict_binary(seg_true, seg_pred),
+        "segment_confusion_matrix": compute_confusion_matrix_binary(seg_true, seg_pred),
+    }
+
 
 def run_train_epoch(model, loader, optimizer, criterion, device=DEVICE, grad_clip_norm=1.0):
     model.train()

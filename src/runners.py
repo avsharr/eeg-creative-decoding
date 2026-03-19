@@ -21,11 +21,15 @@ import torch
 import torch.nn as nn
 from torch.optim import AdamW
 from sklearn.model_selection import LeaveOneGroupOut, GroupKFold, StratifiedGroupKFold
+from torch.utils.data import DataLoader
 
-from src.deep_models import EEGNet, EEGNET_CONFIG
+
+from src.deep_models import EEGNet, EEGNET_CONFIG, build_binary_eegnet_model
 from src.deep_utils import (
     DEVICE,
     aggregate_segment_predictions,
+    aggregate_segment_predictions_binary,
+    compute_metrics_dict_binary,
     make_class_weights,
     make_h5_loader,
     run_eval_epoch,
@@ -1232,6 +1236,13 @@ def _run_deep_cross_subject(dataset_name: str):
         "segment_prob": segment_out["segment_probs"],
     }
 
+def _select_rest_ig_indices(y_all: np.ndarray):
+    mask = np.isin(y_all, [0, 1])
+    indices = np.where(mask)[0]
+    y_binary = y_all[indices].copy()
+    # already 0=REST, 1=IG
+    return indices, y_binary
+
 
 # ------------------------------------------------------------
 # Deep experiments
@@ -1249,8 +1260,375 @@ def run_deep_experiment_by_name(experiment_name: str):
     if experiment_name == "creativity_cross_eegnet":
         return _run_deep_cross_subject("creativity")
 
-    raise NotImplementedError(
-        f"Deep experiment '{experiment_name}' is not wired yet. "
-        "Within-subject and cross-subject EEGNet are implemented first. "
-        "Cross-dataset EEGNet can be added next."
+    if experiment_name == "design_to_creativity_eegnet":
+        return _run_deep_cross_dataset("design", "creativity")
+
+    if experiment_name == "creativity_to_design_eegnet":
+        return _run_deep_cross_dataset("creativity", "design")
+
+    if experiment_name == "design_to_creativity_rest_ig_eegnet":
+        return _run_deep_cross_dataset_rest_ig("design", "creativity")
+
+    if experiment_name == "creativity_to_design_rest_ig_eegnet":
+        return _run_deep_cross_dataset_rest_ig("creativity", "design")
+
+    raise NotImplementedError(f"Deep experiment '{experiment_name}' is not wired.")
+
+def _fit_cross_dataset_eegnet(
+    train_h5_path,
+    test_h5_path,
+    train_indices,
+    test_indices,
+    test_segment_ids_all,
+    y_train_all,
+    batch_size=64,
+    lr=1e-3,
+    weight_decay=1e-2,
+    max_epochs=25,
+    n_classes=3,
+    seed=42,
+):
+    set_global_seed(seed)
+
+    train_loader = make_h5_loader(train_h5_path, train_indices, batch_size=batch_size, shuffle=True)
+    test_loader = make_h5_loader(test_h5_path, test_indices, batch_size=batch_size, shuffle=False)
+
+    model = EEGNet(
+        n_classes=n_classes,
+        chans=EEGNET_CONFIG["chans"],
+        samples=EEGNET_CONFIG["samples"],
+        dropout_rate=EEGNET_CONFIG["dropout_rate"],
+        F1=EEGNET_CONFIG["F1"],
+        D=EEGNET_CONFIG["D"],
+        F2=EEGNET_CONFIG["F2"],
+        kernel_length=EEGNET_CONFIG["kernel_length"],
+    ).to(DEVICE)
+
+    class_weights = make_class_weights(y_train_all[train_indices], n_classes=n_classes).to(DEVICE)
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    optimizer = AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+
+    best_state = None
+    best_score = -np.inf
+    history_rows = []
+
+    for epoch in range(1, max_epochs + 1):
+        train_loss = run_train_epoch(model, train_loader, optimizer, criterion, device=DEVICE)
+
+        eval_out = run_eval_epoch(model, test_loader, criterion, device=DEVICE)
+        seg_out = aggregate_segment_predictions(
+            segment_ids=test_segment_ids_all[test_indices],
+            y_true=eval_out["y_true"],
+            probs=eval_out["probs"],
+        )
+        seg_bal_acc = float(seg_out["segment_metrics"]["balanced_accuracy"])
+        test_loss = float(eval_out["loss"])
+
+        history_rows.append(
+            {
+                "epoch": epoch,
+                "train_loss": float(train_loss),
+                "test_loss": float(test_loss),
+                "test_segment_balanced_accuracy": seg_bal_acc,
+            }
+        )
+
+        if seg_bal_acc > best_score:
+            best_score = seg_bal_acc
+            best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+
+    if best_state is None:
+        raise RuntimeError("No valid best state captured during cross-dataset training.")
+
+    model.load_state_dict(best_state)
+
+    eval_out = run_eval_epoch(model, test_loader, criterion, device=DEVICE)
+    seg_out = aggregate_segment_predictions(
+        segment_ids=test_segment_ids_all[test_indices],
+        y_true=eval_out["y_true"],
+        probs=eval_out["probs"],
     )
+
+    return {
+        "model": model,
+        "history_rows": history_rows,
+        "best_test_segment_balanced_accuracy": best_score,
+        "test_window_y_true": eval_out["y_true"],
+        "test_window_y_pred": eval_out["y_pred"],
+        "test_window_probs": eval_out["probs"],
+        "test_window_metrics": eval_out["metrics"],
+        "test_segment": seg_out,
+    }
+
+
+def _run_deep_cross_dataset(train_dataset_name: str, test_dataset_name: str):
+    train_h5 = CACHE_DIR / f"{train_dataset_name}_windows.h5"
+    test_h5 = CACHE_DIR / f"{test_dataset_name}_windows.h5"
+
+    y_train_all, subject_ids_train, segment_ids_train, _ = _load_h5_metadata_arrays(train_h5)
+    y_test_all, subject_ids_test, segment_ids_test, _ = _load_h5_metadata_arrays(test_h5)
+
+    train_indices = np.arange(len(y_train_all))
+    test_indices = np.arange(len(y_test_all))
+
+    start = time.time()
+    out = _fit_cross_dataset_eegnet(
+        train_h5_path=train_h5,
+        test_h5_path=test_h5,
+        train_indices=train_indices,
+        test_indices=test_indices,
+        test_segment_ids_all=segment_ids_test,
+        y_train_all=y_train_all,
+        n_classes=3,
+        seed=3000,
+    )
+    elapsed = time.time() - start
+
+    segment_out = out["test_segment"]
+    window_metrics = out["test_window_metrics"]
+
+    config = {
+        "dataset_name": f"{train_dataset_name}_to_{test_dataset_name}",
+        "model_type": "eegnet",
+        "input_type": "raw_windows_h5",
+        "evaluation_type": "cross_dataset",
+        "selection_metric": "test_segment_balanced_accuracy",
+        "train_h5_path": str(train_h5),
+        "test_h5_path": str(test_h5),
+    }
+
+    metrics = {
+        "balanced_accuracy": float(window_metrics["balanced_accuracy"]),
+        "accuracy": float(window_metrics["accuracy"]),
+        "macro_f1": float(window_metrics["macro_f1"]),
+        "segment_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "segment_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "segment_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "report_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "report_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "report_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "n_train": int(len(train_indices)),
+        "n_test": int(len(test_indices)),
+        "n_test_segments": int(len(segment_out["segment_y_true"])),
+        "n_test_subjects": int(len(np.unique(subject_ids_test))),
+        "train_time_sec": round(elapsed, 3),
+    }
+
+    notes = {
+        "evaluation_type": "cross_dataset",
+        "train_dataset": train_dataset_name,
+        "test_dataset": test_dataset_name,
+        "model_type": "eegnet",
+        "aggregation_method": "mean_probability_per_segment",
+    }
+
+    history = {
+        "epoch_rows": out["history_rows"],
+        "best_test_segment_balanced_accuracy": float(out["best_test_segment_balanced_accuracy"]),
+    }
+
+    return {
+        "config": config,
+        "metrics": metrics,
+        "notes": notes,
+        "history": history,
+        "confusion_matrix_array": segment_out["segment_confusion_matrix"],
+        "y_true": out["test_window_y_true"],
+        "y_pred": out["test_window_y_pred"],
+        "y_prob": out["test_window_probs"],
+        "segment_ids": segment_ids_test[test_indices],
+        "subject_ids": subject_ids_test[test_indices],
+        "segment_y_true": segment_out["segment_y_true"],
+        "segment_y_pred": segment_out["segment_y_pred"],
+        "segment_prob": segment_out["segment_probs"],
+    }
+
+
+def _make_binary_h5_loader(h5_path, indices, batch_size=64, shuffle=False):
+    class BinaryWrapperDataset(torch.utils.data.Dataset):
+        def __init__(self, base_h5_path, base_indices):
+            self.base_h5_path = str(base_h5_path)
+            self.base_indices = np.asarray(base_indices, dtype=np.int64)
+            self._h5 = None
+
+        def _ensure_open(self):
+            if self._h5 is None:
+                self._h5 = h5py.File(self.base_h5_path, "r")
+
+        def __len__(self):
+            return len(self.base_indices)
+
+        def __getitem__(self, idx):
+            self._ensure_open()
+            real_idx = int(self.base_indices[idx])
+            x = self._h5["X_windows"][real_idx].astype(np.float32)
+            y = int(self._h5["y"][real_idx])  # already 0 or 1 for REST/IG subset
+            mean = x.mean(axis=1, keepdims=True)
+            std = x.std(axis=1, keepdims=True)
+            x = (x - mean) / np.maximum(std, 1e-6)
+            x = torch.tensor(x, dtype=torch.float32).unsqueeze(0)
+            y = torch.tensor(y, dtype=torch.long)
+            return x, y
+
+    ds = BinaryWrapperDataset(h5_path, indices)
+    return DataLoader(ds, batch_size=batch_size, shuffle=shuffle, num_workers=0, pin_memory=False, drop_last=False)
+
+
+def _fit_cross_dataset_binary_eegnet(
+    train_h5_path,
+    test_h5_path,
+    train_indices,
+    test_indices,
+    y_train_binary,
+    test_segment_ids_all,
+    y_test_binary_all,
+    batch_size=64,
+    lr=1e-3,
+    weight_decay=1e-2,
+    max_epochs=25,
+    seed=42,
+):
+    set_global_seed(seed)
+
+    train_loader = _make_binary_h5_loader(train_h5_path, train_indices, batch_size=batch_size, shuffle=True)
+    test_loader = _make_binary_h5_loader(test_h5_path, test_indices, batch_size=batch_size, shuffle=False)
+
+    model = build_binary_eegnet_model().to(DEVICE)
+    class_weights = make_class_weights(y_train_binary, n_classes=2).to(DEVICE)
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    optimizer = AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+
+    best_state = None
+    best_score = -np.inf
+    history_rows = []
+
+    for epoch in range(1, max_epochs + 1):
+        train_loss = run_train_epoch(model, train_loader, optimizer, criterion, device=DEVICE)
+        eval_out = run_eval_epoch(model, test_loader, criterion, device=DEVICE)
+        seg_out = aggregate_segment_predictions_binary(
+            segment_ids=test_segment_ids_all[test_indices],
+            y_true=y_test_binary_all,
+            probs=eval_out["probs"],
+        )
+        seg_bal_acc = float(seg_out["segment_metrics"]["balanced_accuracy"])
+        test_loss = float(eval_out["loss"])
+
+        history_rows.append(
+            {
+                "epoch": epoch,
+                "train_loss": float(train_loss),
+                "test_loss": float(test_loss),
+                "test_segment_balanced_accuracy": seg_bal_acc,
+            }
+        )
+
+        if seg_bal_acc > best_score:
+            best_score = seg_bal_acc
+            best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+
+    if best_state is None:
+        raise RuntimeError("No valid best state captured during binary cross-dataset training.")
+
+    model.load_state_dict(best_state)
+    eval_out = run_eval_epoch(model, test_loader, criterion, device=DEVICE)
+    seg_out = aggregate_segment_predictions_binary(
+        segment_ids=test_segment_ids_all[test_indices],
+        y_true=y_test_binary_all,
+        probs=eval_out["probs"],
+    )
+
+    return {
+        "model": model,
+        "history_rows": history_rows,
+        "best_test_segment_balanced_accuracy": best_score,
+        "test_window_y_true": eval_out["y_true"],
+        "test_window_y_pred": eval_out["y_pred"],
+        "test_window_probs": eval_out["probs"],
+        "test_window_metrics": compute_metrics_dict_binary(eval_out["y_true"], eval_out["y_pred"]),
+        "test_segment": seg_out,
+    }
+
+
+def _run_deep_cross_dataset_rest_ig(train_dataset_name: str, test_dataset_name: str):
+    train_h5 = CACHE_DIR / f"{train_dataset_name}_windows.h5"
+    test_h5 = CACHE_DIR / f"{test_dataset_name}_windows.h5"
+
+    y_train_all, _, _, _ = _load_h5_metadata_arrays(train_h5)
+    y_test_all, subject_ids_test, segment_ids_test, _ = _load_h5_metadata_arrays(test_h5)
+
+    train_indices, y_train_binary = _select_rest_ig_indices(y_train_all)
+    test_indices, y_test_binary = _select_rest_ig_indices(y_test_all)
+
+    start = time.time()
+    out = _fit_cross_dataset_binary_eegnet(
+        train_h5_path=train_h5,
+        test_h5_path=test_h5,
+        train_indices=train_indices,
+        test_indices=test_indices,
+        y_train_binary=y_train_binary,
+        test_segment_ids_all=segment_ids_test,
+        y_test_binary_all=y_test_binary,
+        seed=4000,
+    )
+    elapsed = time.time() - start
+
+    segment_out = out["test_segment"]
+    window_metrics = out["test_window_metrics"]
+
+    config = {
+        "dataset_name": f"{train_dataset_name}_to_{test_dataset_name}_rest_ig",
+        "model_type": "eegnet",
+        "input_type": "raw_windows_h5",
+        "evaluation_type": "binary_cross_dataset",
+        "selection_metric": "test_segment_balanced_accuracy",
+        "task": "REST_vs_IG",
+        "train_h5_path": str(train_h5),
+        "test_h5_path": str(test_h5),
+    }
+
+    metrics = {
+        "balanced_accuracy": float(window_metrics["balanced_accuracy"]),
+        "accuracy": float(window_metrics["accuracy"]),
+        "macro_f1": float(window_metrics["macro_f1"]),
+        "segment_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "segment_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "segment_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "report_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "report_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "report_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "n_train": int(len(train_indices)),
+        "n_test": int(len(test_indices)),
+        "n_test_segments": int(len(segment_out["segment_y_true"])),
+        "n_test_subjects": int(len(np.unique(subject_ids_test[test_indices]))),
+        "train_time_sec": round(elapsed, 3),
+    }
+
+    notes = {
+        "evaluation_type": "binary_cross_dataset",
+        "train_dataset": train_dataset_name,
+        "test_dataset": test_dataset_name,
+        "task": "REST_vs_IG",
+        "model_type": "eegnet",
+        "aggregation_method": "mean_probability_per_segment",
+    }
+
+    history = {
+        "epoch_rows": out["history_rows"],
+        "best_test_segment_balanced_accuracy": float(out["best_test_segment_balanced_accuracy"]),
+    }
+
+    return {
+        "config": config,
+        "metrics": metrics,
+        "notes": notes,
+        "history": history,
+        "confusion_matrix_array": segment_out["segment_confusion_matrix"],
+        "y_true": out["test_window_y_true"],
+        "y_pred": out["test_window_y_pred"],
+        "y_prob": out["test_window_probs"],
+        "segment_ids": segment_ids_test[test_indices],
+        "subject_ids": subject_ids_test[test_indices],
+        "segment_y_true": segment_out["segment_y_true"],
+        "segment_y_pred": segment_out["segment_y_pred"],
+        "segment_prob": segment_out["segment_probs"],
+    }

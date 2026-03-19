@@ -72,3 +72,13 @@ class EEGNet(nn.Module):
         x = self.block2(x)
         x = x.flatten(start_dim=1)
         return self.classifier(x)
+    
+def build_eegnet_model(n_classes: int = 3):
+    cfg = EEGNET_CONFIG.copy()
+    cfg["n_classes"] = n_classes
+    return EEGNet(**cfg)
+
+
+def build_binary_eegnet_model():
+    cfg = EEGNET_BINARY_CONFIG.copy()
+    return EEGNet(**cfg)
