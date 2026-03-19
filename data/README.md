@@ -12,6 +12,15 @@ data/raw/
 ├── Design_EEG_Dataset/
 └── Creativity_EEG_Dataset/
 
+## Optional Google Drive helper
+
+the datasets can also be downloaded automatically with:
+
+```powershell
+python -m scripts.download_data_gdrive
+
+if the google drive helper didnt work do this only :
+
 Quick setup:
 1. Download the public datasets from the Mendeley pages above.
 2. Either:
