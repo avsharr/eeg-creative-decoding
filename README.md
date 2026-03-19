@@ -1,64 +1,111 @@
 # EEG Creative Decoding
 
-Machine-learning final project for EEG-based classification of cognitive states during **design** and **creativity** tasks.
+> Machine-learning final project for EEG-based classification of cognitive states during **design** and **creativity** tasks using both **classical machine learning** and **EEGNet**.
 
-This repository compares **classical machine-learning models** and **EEGNet** on two public EEG datasets, and includes saved experiment outputs, final figures, and final tables used for reporting.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Bar-Ilan University](https://img.shields.io/badge/Bar--Ilan%20University-ML%20for%20Neuroscience-green)](https://www.biu.ac.il)
 
-## Project overview
+---
 
-The goal of this project is to classify cognitive states from EEG recordings collected during open-ended design and creativity experiments.
+## Quick Start
 
-Final target classes used in this project:
+1. Create and activate a virtual environment
+2. Install dependencies
+3. Check dataset placement
+4. Run an experiment or inspect the saved results
+5. Regenerate figures/tables if needed
+
+```bash
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m scripts.download_data --check-only
+python -m scripts.run_experiment --experiment design_within_logreg --force
+python -m scripts.generate_report_artifacts
+
+## Overview
+
+This repository contains our final project for **Machine Learning for Neuroscience** at **Bar-Ilan University**. The goal is to classify cognitive states from EEG recordings collected during open-ended **design** and **creativity** tasks.
+
+We compare **classical machine-learning models** and a deep-learning model (**EEGNet**) across two public EEG datasets, and include the saved experiment outputs, final figures, and final tables used in the final report.
+
+### Final target classes
 
 - **REST**
 - **IG** — idea generation
 - **IE** — evaluation-related state used in the final label mapping
 
-The project includes:
+### Main research questions
 
-- within-subject experiments
-- cross-subject experiments
-- cross-dataset transfer experiments
-- comparison between classical machine-learning models and EEGNet
+- Can EEG reliably distinguish **idea generation**, **evaluation-related processing**, and **rest**?
+- How well do models generalize across participants (**cross-subject / LOSO**)?
+- Can a model trained on one dataset transfer to another (**cross-dataset transfer**)?
+- How do **classical feature-based models** compare with **EEGNet** on the same problem?
 
-## Public datasets
+---
 
-This project uses two public EEG datasets from Mendeley Data:
+## Datasets
 
-- **Design EEG Dataset**  
-  `https://data.mendeley.com/datasets/h4rf6wzjcr/1`
+This project uses two public EEG datasets from **Mendeley Data**.
 
-- **Creativity EEG Dataset**  
-  `https://data.mendeley.com/datasets/24yp3xp58b/1`
+| Dataset | Subjects | Classes used in this project | Sampling Rate | Source |
+|---|---:|---|---:|---|
+| **Design EEG Dataset** | 27 | IG / IE / REST | 250 Hz | [Mendeley](https://data.mendeley.com/datasets/h4rf6wzjcr/1) |
+| **Creativity EEG Dataset** | 28 | IG / IE / REST | 250 Hz in project workflow | [Mendeley](https://data.mendeley.com/datasets/24yp3xp58b/1) |
 
-Raw data is **not included** in this repository.
+### Notes
 
-Expected local structure:
+- Raw data is **not included** in this repository.
+- The creativity dataset originally comes from a higher sampling rate source and is handled in the project preprocessing workflow.
+- Local raw data is expected under:
 
 ```text
 data/raw/
 ├── Design_EEG_Dataset/
 └── Creativity_EEG_Dataset/
-Repository structure
-src/        reusable project code
-scripts/    command-line entry points
-data/       raw/processed data folders and setup instructions
-results/    saved experiment outputs, figures, and tables
-notebooks/  original and non-Drive notebook versions
-cache/      local cache outputs (not tracked)
-Included outputs
+Project Scope
 
-This repository already includes saved outputs generated during the project workflow:
+The repository includes:
 
-results/experiments/
+within-subject experiments
 
-results/figures/
+cross-subject experiments
 
-results/tables/
+cross-dataset transfer experiments
 
-These are included so the checker can inspect the final outputs directly without having to rerun all experiments.
+comparison between classical machine-learning models and EEGNet
 
-Supported experiments
+saved outputs used for the final report
+
+Models
+Classical machine-learning models
+
+Logistic Regression
+
+Linear SVM
+
+RBF SVM
+
+Deep-learning model
+
+EEGNet
+
+Feature representation for classical models
+
+Classical models use EEG band-power features extracted from 4 canonical frequency bands:
+
+Band	Frequency Range
+Delta	1–4 Hz
+Theta	4–8 Hz
+Alpha	8–13 Hz
+Beta	13–30 Hz
+
+With 63 EEG channels and 4 bands, this gives:
+
+252 features per window
+
+Supported Experiments
 Within-subject
 
 design_within_logreg
@@ -99,12 +146,66 @@ design_to_creativity_rest_ig_eegnet
 
 creativity_to_design_rest_ig_eegnet
 
-Environment setup
+Repository Structure
+eeg-creative-decoding/
+├── src/                        # Reusable project code
+├── scripts/                    # Command-line entry points
+├── notebooks/                  # Final notebooks and notebook notes
+├── data/                       # Data setup instructions
+├── results/                    # Saved experiment outputs, figures, and tables
+├── cache/                      # Local caches (not tracked by git)
+├── requirements.txt
+├── pyproject.toml
+├── .gitignore
+└── README.md
+Main folders
+
+src/ — modular project code
+
+scripts/ — reproducible repo workflow
+
+notebooks/ — archived notebook workflow
+
+results/experiments/ — saved experiment outputs
+
+results/figures/ — final figures
+
+results/tables/ — final tables
+
+Included Outputs
+
+This repository already includes saved outputs generated during the project workflow:
+
+results/experiments/
+
+results/figures/
+
+results/tables/
+
+These are included so the checker can inspect the final outputs directly without having to rerun all experiments from scratch.
+
+Main final outputs
+
+Main report-ready outputs are available in:
+
+results/tables/
+
+results/figures/
+
+These include:
+
+segment-level result summaries
+
+comparison plots
+
+best-model confusion matrices
+
+Environment Setup
 Windows PowerShell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-Data setup
+Data Setup
 
 See data/README.md for detailed dataset setup instructions.
 
@@ -119,7 +220,7 @@ python -m scripts.download_data_gdrive
 
 This helper is provided for convenience. The official public dataset sources remain the Mendeley dataset pages listed above.
 
-Main scripts
+Main Scripts
 Validate dataset placement
 python -m scripts.download_data --check-only
 Build classical bandpower caches
@@ -132,38 +233,46 @@ Regenerate report artifacts
 python -m scripts.generate_report_artifacts
 Notebooks
 
-See notebooks/README.md.
+See notebooks/README.md for notebook-specific details.
 
-Two versions of the notebook are included:
+Two archived notebook versions are included:
 
-Final_ML_Project_drive.ipynb — the original Drive-based notebook used during development
+Final_ML_Project_archived_drive.ipynb — the original Drive-based notebook used during development
 
-Final_ML_Project.ipynb — the same notebook adapted to run without Google Drive dependency
+Final_ML_Project_archived.ipynb — the adapted version that can be used without the original Google Drive dependency
 
-The Drive-based notebook is kept for preserving the original development workflow.
-The non-Drive notebook is included so the checker can run the notebook without needing the original Google Drive setup.
+Why both notebooks are included
 
-Reproducibility notes
+The Drive-based notebook is kept to preserve the original development workflow.
+The non-Drive archived notebook is included so the checker can inspect and run the workflow without depending on the original Google Drive setup.
 
-Raw data is not tracked in git.
+Reproducibility Notes
 
-Generated local caches are not intended to be tracked in git.
+Raw data is not tracked in git
 
-Saved final experiment outputs are included in results/experiments/.
+Generated local caches are not intended to be tracked
 
-Classical experiments can be rerun through the repo scripts.
+Saved final experiment outputs are included in results/experiments/
 
-Report tables and figures can be regenerated from saved experiment outputs.
+Classical experiments can be rerun through the repo scripts
 
-EEGNet rerun infrastructure is included through memory-safe HDF5 raw-window caches, but deep-learning experiments remain substantially more resource-intensive and may require long runtimes and stronger hardware.
+Report figures and tables can be regenerated from saved experiment outputs
 
-The original notebook is kept for reference, but the intended repository workflow is through the modular code in src/, the scripts in scripts/, and the non-Drive notebook when needed.
+EEGNet reruns are supported through memory-safe raw-window caching, but deep-learning experiments remain more resource-intensive and may require long runtimes and stronger hardware
 
-Notes about reproducibility vs original results
+The original notebook workflow is preserved for reference, but the intended repository workflow is through:
+
+the modular code in src/
+
+the scripts in scripts/
+
+the archived non-Drive notebook when notebook inspection is needed
+
+Notes About Reproducibility vs. Original Results
 
 The repository includes the original saved project outputs under results/.
 
-The non-Drive notebook and the refactored repo code were adapted from the original project workflow so the checker can run the project without needing Google Drive. Because of differences such as:
+The archived non-Drive notebook and the refactored repo code were adapted from the original project workflow so the checker can run the project without relying on Google Drive. Because of differences such as:
 
 package versions
 
@@ -175,24 +284,34 @@ hardware/runtime differences for deep-learning experiments
 
 minor numerical differences may appear between rerun results and the originally saved outputs.
 
-For this reason:
+Therefore
 
 the saved outputs in results/ should be treated as the main final project outputs
 
-the rerun code and non-Drive notebook should be treated as the reproducible checker-facing execution path
+the rerun code and archived non-Drive notebook should be treated as the checker-facing reproducible execution path
 
-Main final outputs
+Evaluation Notes
 
-Main final outputs are available in:
+Cross-subject experiments are based on Leave-One-Subject-Out (LOSO) evaluation
 
-results/tables/
+Performance is primarily reported using balanced accuracy
 
-results/figures/
+Segment-level summaries and confusion matrices are included in the final outputs
 
-These include:
+Team
+Name	Role
+Dilan Efe	ML pipeline, experiment design, classical models
+Anastasiia Sharova	preprocessing, feature engineering
+Orwa Yassin	EEGNet / deep learning, repository setup
 
-segment-level result summaries
+Bar-Ilan University — Machine Learning for Neuroscience (2025/26)
 
-comparison plots
+References
 
-best-model confusion matrices
+Lawhern et al. (2018). EEGNet: A Compact Convolutional Neural Network for EEG-based Brain–Computer Interfaces.
+
+Barachant et al. (2012). Multiclass Brain–Computer Interface Classification by Riemannian Geometry.
+
+Design EEG Dataset — Mendeley Data
+
+Creativity EEG Dataset — Mendeley Data
