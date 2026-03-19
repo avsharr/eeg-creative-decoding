@@ -1,37 +1,31 @@
-# virtual env
+# Environments / OS / editor
 .venv/
 venv/
-
-# python cache
 __pycache__/
+**/__pycache__/
 *.pyc
-
-# notebook checkpoints
-.ipynb_checkpoints/
-
-# build metadata
-*.egg-info/
-
-# OS/editor
 .DS_Store
-Thumbs.db
+.ipynb_checkpoints/
+.idea/
 .vscode/
 
-# raw and processed local data
+# Data
 data/raw/*
 data/processed/*
-
-# keep folder structure and docs
+data/_downloads/*
 !data/README.md
-!data/raw/README.md
-!data/processed/README.md
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/_downloads/.gitkeep
 
-# generated experiment artifacts
-results/experiments/*
+# Local caches / artifacts
+cache/*
+!cache/.gitkeep
 
-# keep folder placeholder if needed
-!results/experiments/.gitkeep
+checkpoints/*
+!checkpoints/.gitkeep
 
-# keep final figures/tables tracked
-# results/figures/*
-# results/tables/*
+# Keep project results tracked
+# results/experiments/, results/figures/, and results/tables/
+# are part of the submission and should remain visible
+!results/README.md

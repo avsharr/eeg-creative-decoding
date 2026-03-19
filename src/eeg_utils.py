@@ -592,6 +592,169 @@ def build_bandpower_cache_from_windows_cache(
 
     print(f"[{dataset_name}] X_bandpower shape:", X_bandpower.shape)
 
+def build_bandpower_cache_direct_from_dataset(
+    dataset_name: str,
+    dataset_dir: Path,
+    task_to_final_map: dict,
+    cache_key: str,
+) -> None:
+    files = discover_dataset_files(dataset_name=dataset_name, dataset_dir=dataset_dir)
+    print(f"[{dataset_name}] discovered files: {len(files)}")
+    summarize_file_list(files, max_show=20)
+
+    X_bp_list = []
+    y_list = []
+    subject_list = []
+    segment_list = []
+    task_list = []
+    run_id_list = []
+    source_file_list = []
+    source_variable_list = []
+    mat_format_list = []
+
+    record_rows = []
+    skipped_files = []
+    skipped_variables = []
+
+    for file_path in files:
+        try:
+            records = load_subject_file_records(file_path, dataset_name=dataset_name)
+        except Exception as e:
+            skipped_files.append({"file": str(file_path), "reason": f"exception_while_loading_file: {e}"})
+            continue
+
+        for rec in records:
+            subject_id = rec["subject_id"]
+            task_name = rec["task_name"]
+            run_id = rec["run_id"]
+            eeg = rec["eeg"]
+            source_file = rec["source_file"]
+            source_variable = rec["source_variable"]
+            mat_format = rec["mat_format"]
+
+            final_label_name = task_to_final_map.get(task_name, None)
+            if final_label_name is None:
+                skipped_variables.append(
+                    {
+                        "file": source_file,
+                        "variable": source_variable,
+                        "reason": f"task excluded or unmapped: {task_name}",
+                    }
+                )
+                continue
+
+            y_int = FINAL_LABEL_TO_INT[final_label_name]
+
+            windows = make_overlapping_windows(
+                X_continuous=eeg,
+                window_samples=WINDOW_SAMPLES,
+                step_samples=STEP_SAMPLES,
+                normalize_per_window=True,
+            )
+
+            n_windows = windows.shape[0]
+            if n_windows == 0:
+                skipped_variables.append(
+                    {
+                        "file": source_file,
+                        "variable": source_variable,
+                        "reason": "not enough samples for one full window",
+                    }
+                )
+                continue
+
+            X_bp = compute_bandpower_features_from_windows(
+                X_windows=windows,
+                fs=FS,
+                bands=BANDS,
+                welch_nperseg=256,
+            )
+
+            segment_id = f"{subject_id}__{run_id}__{task_name}__{source_variable}"
+
+            X_bp_list.append(X_bp.astype(np.float32))
+            y_list.append(np.full(n_windows, y_int, dtype=np.int64))
+            subject_list.append(np.array([subject_id] * n_windows, dtype=object))
+            segment_list.append(np.array([segment_id] * n_windows, dtype=object))
+            task_list.append(np.array([task_name] * n_windows, dtype=object))
+            run_id_list.append(np.array([run_id] * n_windows, dtype=object))
+            source_file_list.append(np.array([source_file] * n_windows, dtype=object))
+            source_variable_list.append(np.array([source_variable] * n_windows, dtype=object))
+            mat_format_list.append(np.array([mat_format] * n_windows, dtype=object))
+
+            record_rows.append(
+                {
+                    "subject_id": subject_id,
+                    "run_id": run_id,
+                    "task_name": task_name,
+                    "final_label": final_label_name,
+                    "n_windows": int(n_windows),
+                    "segment_id": segment_id,
+                    "source_file": source_file,
+                    "source_variable": source_variable,
+                    "mat_format": mat_format,
+                }
+            )
+
+            del windows
+            del X_bp
+
+    if len(X_bp_list) == 0:
+        raise RuntimeError(f"No usable bandpower features were created for dataset={dataset_name}")
+
+    X_bandpower = np.concatenate(X_bp_list, axis=0).astype(np.float32)
+    y = np.concatenate(y_list, axis=0).astype(np.int64)
+    subject_ids = np.concatenate(subject_list, axis=0)
+    segment_ids = np.concatenate(segment_list, axis=0)
+    task_names = np.concatenate(task_list, axis=0)
+    run_ids = np.concatenate(run_id_list, axis=0)
+    source_files = np.concatenate(source_file_list, axis=0)
+    source_variables = np.concatenate(source_variable_list, axis=0)
+    mat_formats = np.concatenate(mat_format_list, axis=0)
+
+    arrays = {
+        "X_bandpower": X_bandpower,
+        "y": y,
+        "subject_ids": subject_ids,
+        "segment_ids": segment_ids,
+        "task_names": task_names,
+        "run_ids": run_ids,
+        "source_files": source_files,
+        "source_variables": source_variables,
+        "mat_formats": mat_formats,
+    }
+
+    class_count_map = {}
+    uniq_y, uniq_counts = np.unique(y, return_counts=True)
+    for cls, cnt in zip(uniq_y, uniq_counts):
+        class_count_map[INT_TO_FINAL_LABEL[int(cls)]] = int(cnt)
+
+    metadata = build_standard_cache_metadata(
+        cache_key=cache_key,
+        dataset_name=dataset_name,
+        extra={
+            "dataset_dir": str(dataset_dir),
+            "n_samples": int(X_bandpower.shape[0]),
+            "feature_dim": int(X_bandpower.shape[1]),
+            "n_unique_segments": int(len(np.unique(segment_ids))),
+            "n_subjects_found": int(len(np.unique(subject_ids))),
+            "subjects_found": sorted([str(x) for x in np.unique(subject_ids)]),
+            "class_counts": class_count_map,
+            "record_rows": record_rows,
+            "skipped_files": skipped_files,
+            "skipped_variables": skipped_variables,
+            "built_directly_from_raw": True,
+        },
+    )
+
+    save_cache_with_metadata(cache_key, arrays, metadata)
+
+    print(f"[{dataset_name}] X_bandpower shape:", X_bandpower.shape)
+    print(f"[{dataset_name}] y shape:", y.shape)
+    print(f"[{dataset_name}] unique subjects:", len(np.unique(subject_ids)))
+    print(f"[{dataset_name}] unique segments:", len(np.unique(segment_ids)))
+    print(f"[{dataset_name}] class counts:", class_count_map)
+
 
 # -----------------------------
 # Validation helpers
