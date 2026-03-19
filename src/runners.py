@@ -16,6 +16,24 @@ from sklearn.svm import SVC
 from src.config import INT_TO_FINAL_LABEL
 from src.eeg_utils import load_cache_with_metadata
 
+import h5py
+import torch
+import torch.nn as nn
+from torch.optim import AdamW
+from sklearn.model_selection import LeaveOneGroupOut, GroupKFold, StratifiedGroupKFold
+
+from src.deep_models import EEGNet, EEGNET_CONFIG
+from src.deep_utils import (
+    DEVICE,
+    aggregate_segment_predictions,
+    make_class_weights,
+    make_h5_loader,
+    run_eval_epoch,
+    run_train_epoch,
+    set_global_seed,
+)
+from src.paths import CACHE_DIR
+
 
 CLASS_LABELS_INT = [0, 1, 2]
 CLASS_LABELS_NAME = [INT_TO_FINAL_LABEL[i] for i in CLASS_LABELS_INT]
@@ -777,14 +795,462 @@ def run_cross_subject_classical_experiment(
         },
     }
 
+def _safe_group_splitter(n_splits, y, groups, random_state=42):
+    try:
+        cv = StratifiedGroupKFold(
+            n_splits=n_splits,
+            shuffle=True,
+            random_state=random_state,
+        )
+        _ = list(cv.split(np.zeros(len(y)), y, groups))
+        return cv
+    except Exception:
+        return GroupKFold(n_splits=n_splits)
+
+
+def _load_h5_metadata_arrays(h5_path):
+    with h5py.File(h5_path, "r") as h5:
+        y = np.asarray(h5["y"][:]).astype(int)
+        subject_ids = np.asarray(h5["subject_ids"][:]).astype(str)
+        segment_ids = np.asarray(h5["segment_ids"][:]).astype(str)
+        task_names = np.asarray(h5["task_names"][:]).astype(str) if "task_names" in h5 else None
+    return y, subject_ids, segment_ids, task_names
+
+
+def _make_val_split(indices, y_all, groups_all, max_splits=3, random_state=42):
+    y_sub = y_all[indices]
+    g_sub = groups_all[indices]
+
+    n_groups = len(np.unique(g_sub))
+    if n_groups < 2:
+        return indices, None
+
+    n_splits = min(max_splits, n_groups)
+    if n_splits < 2:
+        return indices, None
+
+    splitter = _safe_group_splitter(n_splits=n_splits, y=y_sub, groups=g_sub, random_state=random_state)
+    train_rel, val_rel = next(splitter.split(np.zeros(len(indices)), y_sub, g_sub))
+    return indices[train_rel], indices[val_rel]
+
+
+def _fit_eegnet_one_fold(
+    h5_path,
+    train_indices,
+    val_indices,
+    test_indices,
+    segment_ids_all,
+    y_all,
+    batch_size=64,
+    lr=1e-3,
+    weight_decay=1e-2,
+    max_epochs=25,
+    patience=6,
+    n_classes=3,
+    seed=42,
+):
+    set_global_seed(seed)
+
+    train_loader = make_h5_loader(h5_path, train_indices, batch_size=batch_size, shuffle=True)
+    val_loader = make_h5_loader(h5_path, val_indices, batch_size=batch_size, shuffle=False) if val_indices is not None else None
+    test_loader = make_h5_loader(h5_path, test_indices, batch_size=batch_size, shuffle=False)
+
+    model = EEGNet(
+        n_classes=n_classes,
+        chans=EEGNET_CONFIG["chans"],
+        samples=EEGNET_CONFIG["samples"],
+        dropout_rate=EEGNET_CONFIG["dropout_rate"],
+        F1=EEGNET_CONFIG["F1"],
+        D=EEGNET_CONFIG["D"],
+        F2=EEGNET_CONFIG["F2"],
+        kernel_length=EEGNET_CONFIG["kernel_length"],
+    ).to(DEVICE)
+
+    class_weights = make_class_weights(y_all[train_indices], n_classes=n_classes).to(DEVICE)
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    optimizer = AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+
+    best_state = None
+    best_score = -np.inf
+    best_epoch = -1
+    epochs_no_improve = 0
+    epoch_rows = []
+
+    for epoch in range(1, max_epochs + 1):
+        train_loss = run_train_epoch(model, train_loader, optimizer, criterion, device=DEVICE)
+
+        if val_loader is not None:
+            val_out = run_eval_epoch(model, val_loader, criterion, device=DEVICE)
+            val_seg = aggregate_segment_predictions(
+                segment_ids=segment_ids_all[val_indices],
+                y_true=val_out["y_true"],
+                probs=val_out["probs"],
+            )
+            val_seg_bal_acc = val_seg["segment_metrics"]["balanced_accuracy"]
+            val_loss = val_out["loss"]
+        else:
+            val_out = run_eval_epoch(model, train_loader, criterion, device=DEVICE)
+            val_seg = aggregate_segment_predictions(
+                segment_ids=segment_ids_all[train_indices],
+                y_true=val_out["y_true"],
+                probs=val_out["probs"],
+            )
+            val_seg_bal_acc = val_seg["segment_metrics"]["balanced_accuracy"]
+            val_loss = val_out["loss"]
+
+        epoch_rows.append(
+            {
+                "epoch": epoch,
+                "train_loss": float(train_loss),
+                "val_loss": float(val_loss),
+                "val_segment_balanced_accuracy": float(val_seg_bal_acc),
+            }
+        )
+
+        if val_seg_bal_acc > best_score:
+            best_score = float(val_seg_bal_acc)
+            best_epoch = int(epoch)
+            best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+            epochs_no_improve = 0
+        else:
+            epochs_no_improve += 1
+
+        if epochs_no_improve >= patience:
+            break
+
+    if best_state is None:
+        raise RuntimeError("EEGNet training failed to produce a best checkpoint.")
+
+    model.load_state_dict(best_state)
+
+    test_out = run_eval_epoch(model, test_loader, criterion, device=DEVICE)
+    test_seg = aggregate_segment_predictions(
+        segment_ids=segment_ids_all[test_indices],
+        y_true=test_out["y_true"],
+        probs=test_out["probs"],
+    )
+
+    return {
+        "model": model,
+        "best_epoch": best_epoch,
+        "best_val_segment_balanced_accuracy": best_score,
+        "epoch_rows": epoch_rows,
+        "test_window_y_true": test_out["y_true"],
+        "test_window_y_pred": test_out["y_pred"],
+        "test_window_probs": test_out["probs"],
+        "test_window_metrics": test_out["metrics"],
+        "test_segment": test_seg,
+    }
+
+
+def _run_deep_within_subject(dataset_name: str):
+    h5_path = CACHE_DIR / f"{dataset_name}_windows.h5"
+    y_all, subject_ids_all, segment_ids_all, _ = _load_h5_metadata_arrays(h5_path)
+
+    all_window_y_true = []
+    all_window_y_pred = []
+    all_window_probs = []
+    all_window_segment_ids = []
+    fold_rows = []
+
+    subject_list = sorted(np.unique(subject_ids_all).tolist())
+    global_start = time.time()
+
+    for subject_pos, subject_id in enumerate(subject_list, start=1):
+        subject_mask = subject_ids_all == subject_id
+        subject_indices = np.where(subject_mask)[0]
+
+        y_sub = y_all[subject_indices]
+        seg_sub = segment_ids_all[subject_indices]
+        unique_segments = np.unique(seg_sub)
+
+        n_groups = len(unique_segments)
+        if n_groups < 2:
+            continue
+
+        outer_n_splits = min(5, n_groups)
+        outer_cv = _safe_group_splitter(
+            n_splits=outer_n_splits,
+            y=y_sub,
+            groups=seg_sub,
+            random_state=42 + subject_pos,
+        )
+
+        for outer_fold_idx, (train_rel, test_rel) in enumerate(
+            outer_cv.split(np.zeros(len(subject_indices)), y_sub, seg_sub),
+            start=1,
+        ):
+            train_indices = subject_indices[train_rel]
+            test_indices = subject_indices[test_rel]
+
+            train_indices, val_indices = _make_val_split(
+                train_indices,
+                y_all=y_all,
+                groups_all=segment_ids_all,
+                max_splits=3,
+                random_state=100 + outer_fold_idx,
+            )
+
+            fold_start = time.time()
+            fold_out = _fit_eegnet_one_fold(
+                h5_path=h5_path,
+                train_indices=train_indices,
+                val_indices=val_indices,
+                test_indices=test_indices,
+                segment_ids_all=segment_ids_all,
+                y_all=y_all,
+                n_classes=3,
+                seed=1000 + outer_fold_idx,
+            )
+            fold_elapsed = time.time() - fold_start
+
+            all_window_y_true.append(fold_out["test_window_y_true"])
+            all_window_y_pred.append(fold_out["test_window_y_pred"])
+            all_window_probs.append(fold_out["test_window_probs"])
+            all_window_segment_ids.append(segment_ids_all[test_indices])
+
+            fold_rows.append(
+                {
+                    "subject_id": str(subject_id),
+                    "outer_fold": int(outer_fold_idx),
+                    "window_balanced_accuracy": float(fold_out["test_window_metrics"]["balanced_accuracy"]),
+                    "window_accuracy": float(fold_out["test_window_metrics"]["accuracy"]),
+                    "window_macro_f1": float(fold_out["test_window_metrics"]["macro_f1"]),
+                    "segment_balanced_accuracy": float(fold_out["test_segment"]["segment_metrics"]["balanced_accuracy"]),
+                    "segment_accuracy": float(fold_out["test_segment"]["segment_metrics"]["accuracy"]),
+                    "segment_macro_f1": float(fold_out["test_segment"]["segment_metrics"]["macro_f1"]),
+                    "best_val_segment_balanced_accuracy": float(fold_out["best_val_segment_balanced_accuracy"]),
+                    "best_epoch": int(fold_out["best_epoch"]),
+                    "n_train_windows": int(len(train_indices)),
+                    "n_val_windows": int(len(val_indices)) if val_indices is not None else 0,
+                    "n_test_windows": int(len(test_indices)),
+                    "n_test_segments": int(len(np.unique(segment_ids_all[test_indices]))),
+                    "fold_time_sec": round(fold_elapsed, 3),
+                }
+            )
+
+    if len(all_window_y_true) == 0:
+        raise RuntimeError(f"No successful deep folds were run for dataset={dataset_name}")
+
+    y_true_all = np.concatenate(all_window_y_true).astype(int)
+    y_pred_all = np.concatenate(all_window_y_pred).astype(int)
+    probs_all = np.concatenate(all_window_probs)
+    segment_ids_eval = np.concatenate(all_window_segment_ids)
+
+    window_metrics = compute_metrics_dict(y_true_all, y_pred_all)
+    segment_out = aggregate_segment_predictions(segment_ids_eval, y_true_all, probs_all)
+    total_elapsed = time.time() - global_start
+
+    config = {
+        "dataset_name": dataset_name,
+        "model_type": "eegnet",
+        "input_type": "raw_windows_h5",
+        "evaluation_type": "within_subject",
+        "cv_type": "StratifiedGroupKFold_or_GroupKFold_fallback",
+        "group_variable": "segment_id",
+        "selection_metric": "segment_balanced_accuracy",
+        "n_samples_total": int(len(y_all)),
+        "h5_path": str(h5_path),
+    }
+
+    metrics = {
+        "balanced_accuracy": float(window_metrics["balanced_accuracy"]),
+        "accuracy": float(window_metrics["accuracy"]),
+        "macro_f1": float(window_metrics["macro_f1"]),
+        "segment_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "segment_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "segment_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "report_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "report_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "report_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "n_train": int(len(y_all)),
+        "n_test": int(len(y_true_all)),
+        "n_test_segments": int(len(segment_out["segment_y_true"])),
+        "n_test_subjects": int(len(np.unique(subject_ids_all))),
+        "train_time_sec": round(total_elapsed, 3),
+    }
+
+    notes = {
+        "evaluation_type": "within_subject",
+        "dataset_name": dataset_name,
+        "model_type": "eegnet",
+        "report_metric_level": "segment",
+        "aggregation_method": "mean_probability_per_segment",
+    }
+
+    history = {"fold_rows": fold_rows, "n_successful_folds": len(fold_rows)}
+
+    return {
+        "config": config,
+        "metrics": metrics,
+        "notes": notes,
+        "history": history,
+        "confusion_matrix_array": segment_out["segment_confusion_matrix"],
+        "y_true": y_true_all,
+        "y_pred": y_pred_all,
+        "y_prob": probs_all,
+        "segment_ids": segment_ids_eval,
+        "segment_y_true": segment_out["segment_y_true"],
+        "segment_y_pred": segment_out["segment_y_pred"],
+        "segment_prob": segment_out["segment_probs"],
+    }
+
+
+def _run_deep_cross_subject(dataset_name: str):
+    h5_path = CACHE_DIR / f"{dataset_name}_windows.h5"
+    y_all, subject_ids_all, segment_ids_all, _ = _load_h5_metadata_arrays(h5_path)
+
+    all_window_y_true = []
+    all_window_y_pred = []
+    all_window_probs = []
+    all_window_segment_ids = []
+    all_window_subject_ids = []
+    fold_rows = []
+
+    global_start = time.time()
+    logo = LeaveOneGroupOut()
+
+    for outer_fold_idx, (train_idx, test_idx) in enumerate(
+        logo.split(np.zeros(len(y_all)), y_all, groups=subject_ids_all),
+        start=1,
+    ):
+        test_subject = str(np.unique(subject_ids_all[test_idx])[0])
+
+        train_indices, val_indices = _make_val_split(
+            train_idx,
+            y_all=y_all,
+            groups_all=subject_ids_all,
+            max_splits=3,
+            random_state=500 + outer_fold_idx,
+        )
+
+        fold_start = time.time()
+        fold_out = _fit_eegnet_one_fold(
+            h5_path=h5_path,
+            train_indices=train_indices,
+            val_indices=val_indices,
+            test_indices=test_idx,
+            segment_ids_all=segment_ids_all,
+            y_all=y_all,
+            n_classes=3,
+            seed=2000 + outer_fold_idx,
+        )
+        fold_elapsed = time.time() - fold_start
+
+        all_window_y_true.append(fold_out["test_window_y_true"])
+        all_window_y_pred.append(fold_out["test_window_y_pred"])
+        all_window_probs.append(fold_out["test_window_probs"])
+        all_window_segment_ids.append(segment_ids_all[test_idx])
+        all_window_subject_ids.append(subject_ids_all[test_idx])
+
+        fold_rows.append(
+            {
+                "test_subject": test_subject,
+                "outer_fold": int(outer_fold_idx),
+                "window_balanced_accuracy": float(fold_out["test_window_metrics"]["balanced_accuracy"]),
+                "window_accuracy": float(fold_out["test_window_metrics"]["accuracy"]),
+                "window_macro_f1": float(fold_out["test_window_metrics"]["macro_f1"]),
+                "segment_balanced_accuracy": float(fold_out["test_segment"]["segment_metrics"]["balanced_accuracy"]),
+                "segment_accuracy": float(fold_out["test_segment"]["segment_metrics"]["accuracy"]),
+                "segment_macro_f1": float(fold_out["test_segment"]["segment_metrics"]["macro_f1"]),
+                "best_val_segment_balanced_accuracy": float(fold_out["best_val_segment_balanced_accuracy"]),
+                "best_epoch": int(fold_out["best_epoch"]),
+                "n_train_windows": int(len(train_indices)),
+                "n_val_windows": int(len(val_indices)) if val_indices is not None else 0,
+                "n_test_windows": int(len(test_idx)),
+                "n_test_segments": int(len(np.unique(segment_ids_all[test_idx]))),
+                "fold_time_sec": round(fold_elapsed, 3),
+            }
+        )
+
+    if len(all_window_y_true) == 0:
+        raise RuntimeError(f"No successful deep folds were run for dataset={dataset_name}")
+
+    y_true_all = np.concatenate(all_window_y_true).astype(int)
+    y_pred_all = np.concatenate(all_window_y_pred).astype(int)
+    probs_all = np.concatenate(all_window_probs)
+    segment_ids_eval = np.concatenate(all_window_segment_ids)
+    subject_ids_eval = np.concatenate(all_window_subject_ids)
+
+    window_metrics = compute_metrics_dict(y_true_all, y_pred_all)
+    segment_out = aggregate_segment_predictions(segment_ids_eval, y_true_all, probs_all)
+    total_elapsed = time.time() - global_start
+
+    config = {
+        "dataset_name": dataset_name,
+        "model_type": "eegnet",
+        "input_type": "raw_windows_h5",
+        "evaluation_type": "cross_subject",
+        "cv_type": "LeaveOneGroupOut_outer + Group/StratifiedGroup inner",
+        "group_variable_outer": "subject_id",
+        "group_variable_inner": "subject_id",
+        "selection_metric": "segment_balanced_accuracy",
+        "n_samples_total": int(len(y_all)),
+        "h5_path": str(h5_path),
+    }
+
+    metrics = {
+        "balanced_accuracy": float(window_metrics["balanced_accuracy"]),
+        "accuracy": float(window_metrics["accuracy"]),
+        "macro_f1": float(window_metrics["macro_f1"]),
+        "segment_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "segment_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "segment_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "report_balanced_accuracy": float(segment_out["segment_metrics"]["balanced_accuracy"]),
+        "report_accuracy": float(segment_out["segment_metrics"]["accuracy"]),
+        "report_macro_f1": float(segment_out["segment_metrics"]["macro_f1"]),
+        "n_train": int(len(y_all)),
+        "n_test": int(len(y_true_all)),
+        "n_test_segments": int(len(segment_out["segment_y_true"])),
+        "n_test_subjects": int(len(np.unique(subject_ids_eval))),
+        "train_time_sec": round(total_elapsed, 3),
+    }
+
+    notes = {
+        "evaluation_type": "cross_subject",
+        "dataset_name": dataset_name,
+        "model_type": "eegnet",
+        "report_metric_level": "segment",
+        "aggregation_method": "mean_probability_per_segment",
+    }
+
+    history = {"fold_rows": fold_rows, "n_successful_folds": len(fold_rows)}
+
+    return {
+        "config": config,
+        "metrics": metrics,
+        "notes": notes,
+        "history": history,
+        "confusion_matrix_array": segment_out["segment_confusion_matrix"],
+        "y_true": y_true_all,
+        "y_pred": y_pred_all,
+        "y_prob": probs_all,
+        "segment_ids": segment_ids_eval,
+        "subject_ids": subject_ids_eval,
+        "segment_y_true": segment_out["segment_y_true"],
+        "segment_y_pred": segment_out["segment_y_pred"],
+        "segment_prob": segment_out["segment_probs"],
+    }
+
 
 # ------------------------------------------------------------
 # Deep experiments
 # ------------------------------------------------------------
 def run_deep_experiment_by_name(experiment_name: str):
+    if experiment_name == "design_within_eegnet":
+        return _run_deep_within_subject("design")
+
+    if experiment_name == "creativity_within_eegnet":
+        return _run_deep_within_subject("creativity")
+
+    if experiment_name == "design_cross_eegnet":
+        return _run_deep_cross_subject("design")
+
+    if experiment_name == "creativity_cross_eegnet":
+        return _run_deep_cross_subject("creativity")
+
     raise NotImplementedError(
-        "Deep experiment reruns are not finished in the repo yet. "
-        "Saved EEGNet outputs are included under results/experiments/, "
-        "but full retraining still requires the raw-window EEG pipeline "
-        "to be extracted from the notebook in a memory-safe way."
+        f"Deep experiment '{experiment_name}' is not wired yet. "
+        "Within-subject and cross-subject EEGNet are implemented first. "
+        "Cross-dataset EEGNet can be added next."
     )
