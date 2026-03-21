@@ -4,7 +4,7 @@ This folder contains two closely related versions of the same project notebook.
 
 ## 1. Drive-based notebook
 
-**File:** `Final_ML_Project_drive.ipynb`
+**File:** `Final_ML_Project_archived_drive.ipynb`
 
 This is the original notebook version used during the project work.
 
