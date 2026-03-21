@@ -17,7 +17,7 @@ This notebook is kept mainly as an archived reference for the original work.
 
 ## 2. Non-Drive notebook
 
-**File:** `Final_ML_Project.ipynb`
+**File:** `Final_ML_Project_archived.ipynb`
 
 This notebook is based directly on the original Drive-based notebook, but adapted so it can run without depending on Google Drive.
 
